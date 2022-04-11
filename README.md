@@ -3,11 +3,10 @@
 # Table of contents
 - [Table of contents](#table-of-contents)
 - [1. Machine Learning Design Patterns](./chapters/c1_machine_learning_design_patterns.md)
-
 - [Resources](#resources)
 
 
-[(Back to top)](#table-of-contents)
+
 
 # Resources
 - Tools: Bigquery, Vertex AI Pipeline, Airflow
