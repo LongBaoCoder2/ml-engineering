@@ -1,4 +1,5 @@
 # Chapter 1: Machine Learning Design Patterns
+Design patterns are a way to codify the knowledge and experience of experts into advice that all practitioners can follow, which captures best practices and solutions to commonly occurring problems in designing, building, and deploying machine learning systems. 
 
 
 # Table of contents
@@ -12,6 +13,8 @@
   - [2.1. Data Quality](#21-data-quality) 
   - [2.2. Reproducibility](#22-reproducibility)
   - [2.3. Data Drift](#23-data-drift)
+  - [2.4. Scale](#24-scale)
+  - [2.5. Multiple Objectives](#25-multiple-objectives)
 - [Resources](#resources)
 
 # 1. Machine Learning Terminology
@@ -117,6 +120,15 @@ A typical machine learning workflow includes:
 - **Data drift** refers to the challenge of ensuring your machine learning models stay relevant, and that model predictions are an accurate reflection of the environment in which they’re being used.
   - For example, let’s say you’re training a model to classify news article headlines into categories like “politics,” “business,” and “technology.” If you train and evaluate your model on historical news articles from the 20th century, it likely won’t perform as well on current data. Today, we know that an article with the word “smartphone” in the headline is probably about technology. However, a model trained on historical data would have no knowledge of this word. 
     - Solution: To solve for drift, it’s important to continually update your training dataset, retrain your model, and modify the weight your model assigns to particular groups of input data.
+- Exploratory Data Analysis (EDA) can help identify this type of drift and can inform the correct window of data to use for training. 
+
+## 2.4. Scale
+- The challenge of scaling is present throughout many stages of a typical machine learning workflow: data collection and preprocessing, training, and serving.
+- For model training, ML engineers are responsible for determining the necessary infrastructure for a specific training job. Depending on the type and size of the dataset, model training can be time consuming and computationally expensive, requiring infrastructure (like GPUs) designed specifically for ML workloads.
+
+## 2.5. Multiple Objectives
+- There is often a single team responsible for building a machine learning model and many teams across an organization will make use of the model in some way. 
+  - For example: you’re building a model to identify defective products from images. As a data scientist, your goal may be to minimize your model’s cross-entropy loss. The product manager, on the other hand, may want to reduce the number of defective products that are misclassified and sent to customers. Finally, the executive team’s goal might be to increase revenue by 30%. Each of these goals vary in what they are optimizing for, and balancing these differing needs within an organization can present a challenge.
 
 # Resources
 
