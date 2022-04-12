@@ -9,6 +9,8 @@
   - [1.3. Data and Model Tooling](#13-data-and-model-tooling)
   - [1.4. Roles](#14-roles)
 - [2. Common Challenges in Machine Learning](#2-common-challenges-in-machine-learning)
+  - [2.1. Data Quality](#21-data-quality) 
+  - [2.2. Reproducibility](#22-reproducibility)
 - [Resources](#resources)
 
 # 1. Machine Learning Terminology
@@ -78,10 +80,37 @@ A typical machine learning workflow includes:
 - **Data analysts** evaluate and gather insights from data, then summarize these insights for other teams within their organization. They tend to work in SQL and spreadsheets, and use business intelligence tools to create data visualizations to share their findings. Data analysts work closely with product teams to understand how their insights can help address business problems and create value. While data analysts focus on identifying trends in existing data and deriving insights from it, data scientists are concerned with using that data to generate future predictions and in automating or scaling out the generation of insights. With the increasing democratization of machine learning, data analysts can upskill themselves to become data scientists.
 - **Developers** are in charge of building production systems that enable end users to access ML models. They are often involved in designing the APIs that query models and return predictions in a user-friendly format via a web or mobile application. This could involve models hosted in the cloud, or models served on-device. Developers utilize the model serving infrastructure implemented by ML Engineers to build applications and user interfaces for surfacing predictions to model users.
 
-# 2. Common Challenges in Machine Learning
-
-
 [(Back to top)](#table-of-contents)
+
+# 2. Common Challenges in Machine Learning
+## 2.1. Data Quality
+- Machine learning models are only as reliable as the data used to train them. 
+  - If you train a machine learning model on an incomplete dataset, on data with poorly selected features, or on data that doesn’t accurately represent the population using the model, your model’s predictions will be a direct reflection of that data.
+  - As a result, machine learning models are often referred to as **"garbage in, garbage out."**
+- **Data accuracy** refers to both your training data’s features and the ground truth labels corresponding with those features
+  - It’s important to do a thorough analysis to screen for 
+    - Typos
+    - Duplicate entries
+      - Duplicates in your training dataset, for example, can cause your model to incorrectly assign more weight to these data points. 
+    - Measurement inconsistencies in tabular data
+    - Missing features
+    - Other errors that may affect data quality. 
+    - Accurate data labels are just as important as feature accuracy. 
+- **Data completeness**: ensuring your training data contains a varied representation of each label. 
+  - For example: you are building a model to predict the price of real estate in a specific city but only include training examples of houses larger than 2,000 square feet, your resulting model will perform poorly on smaller houses.
+- **Data consistency**: for large datasets, it’s common to divide the work of data collection and labeling among a group of people. 
+  - Developing a set of standards for this process can help ensure consistency across your dataset, since each person involved in this will inevitably bring their own biases to the process. 
+
+## 2.2. Reproducibility
+- Machine learning models have an inherent element of randomness. 
+  - When training, ML model weights are initialized with random values. 
+  - These weights then converge during training as the model iterates and learns from the data. Because of this, the same model code given the same training data will produce slightly different results across training runs. 
+- In order to address this problem of repeatability, it’s common to set the random seed value used by your model to ensure that the same randomness will be applied each time you run training
+  - In TensorFlow, you can do this by running `tf.random.set_seed(value)` at the beginning of your program
+- Reproducibility can refer to a model’s training environment. Often, due to large datasets and complexity, many models take a significant amount of time to train. 
+  - This can be accelerated by employing distribution strategies like data or model parallelism (see [Chapter 5](#link)). 
+  - With this acceleration, however, comes an added challenge of repeatability when you rerun code that makes use of distributed training.
+
 
 # Resources
 
