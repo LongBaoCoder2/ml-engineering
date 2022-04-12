@@ -11,6 +11,7 @@
 - [2. Common Challenges in Machine Learning](#2-common-challenges-in-machine-learning)
   - [2.1. Data Quality](#21-data-quality) 
   - [2.2. Reproducibility](#22-reproducibility)
+  - [2.3. Data Drift](#23-data-drift)
 - [Resources](#resources)
 
 # 1. Machine Learning Terminology
@@ -111,6 +112,11 @@ A typical machine learning workflow includes:
   - This can be accelerated by employing distribution strategies like data or model parallelism (see [Chapter 5](#link)). 
   - With this acceleration, however, comes an added challenge of repeatability when you rerun code that makes use of distributed training.
 
+## 2.3. Data Drift
+- While machine learning models typically represent a static relationship between inputs and outputs, data can change significantly over time. 
+- **Data drift** refers to the challenge of ensuring your machine learning models stay relevant, and that model predictions are an accurate reflection of the environment in which they’re being used.
+  - For example, let’s say you’re training a model to classify news article headlines into categories like “politics,” “business,” and “technology.” If you train and evaluate your model on historical news articles from the 20th century, it likely won’t perform as well on current data. Today, we know that an article with the word “smartphone” in the headline is probably about technology. However, a model trained on historical data would have no knowledge of this word. 
+    - Solution: To solve for drift, it’s important to continually update your training dataset, retrain your model, and modify the weight your model assigns to particular groups of input data.
 
 # Resources
 
