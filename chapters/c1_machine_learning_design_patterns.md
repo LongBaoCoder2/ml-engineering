@@ -6,7 +6,7 @@ Design patterns are a way to codify the knowledge and experience of experts into
 - [Table of contents](#table-of-contents)
 - [1. Machine Learning Terminology](#1-machine-learning-terminology)
   - [1.1. Data and Feature Engineering](#11-data-and-feature-engineering) 
-  - [1.2. Machine Learning Process](#12-machine-learning-process)
+  - [1.2. Machine Learning Lifecycle](#12-machine-learning-lifecycle)
   - [1.3. Data and Model Tooling](#13-data-and-model-tooling)
   - [1.4. Roles](#14-roles)
 - [2. Common Challenges in Machine Learning](#2-common-challenges-in-machine-learning)
@@ -28,10 +28,11 @@ Design patterns are a way to codify the knowledge and experience of experts into
   - Evaluating various statistics on your data can help you ensure the dataset contains a balanced representation of each feature.
   - Data validation can identify inconsistencies that may affect the quality of your training and test sets
   - For example, maybe the majority of your training dataset contains weekday examples while your test set contains primarily weekend examples.
+
 [(Back to top)](#table-of-contents)
 
-## 1.2. Machine Learning Process
-A typical machine learning workflow includes:
+## 1.2. Machine Learning Lifecycle
+A typical machine learning workflow/lifecycle includes:
 - **Training**: the process of passing training data to a model so that it can learn to identify patterns. 
 - **Model evaluation**: After training, the next step in the process is testing how your model performs on data outside of your training set. 
   - You might run training and evaluation multiple times
@@ -44,13 +45,23 @@ A typical machine learning workflow includes:
     - On-premises: on the premises of the person or organization using the software, rather than at a remote facility such as a server farm or cloud.
     - On-device
 - **Prediction**: This can refer both to generating predictions from local models that have not yet been deployed as well as getting predictions from deployed models. 
-  - For *deployed* models: `Online` and `Batch` prediction. 
-- **Online prediction**: is used when you want to get predictions on a few examples in near real time. 
-  - With online prediction, the emphasis is on *low latency*. 
-- **Batch prediction**: refers to generating predictions on a large set of data offline. 
-  - Batch prediction jobs take longer than online prediction and are useful for precomputing predictions (such as in recommendation systems) and in analyzing your model’s predictions across a large sample of new data.
+    - For *deployed* models: `Online` and `Batch` prediction. 
+  - **Online prediction**: is used when you want to get predictions on a few examples in near real time. 
+    - With online prediction, the emphasis is on *low latency*. 
+  - **Batch prediction**: refers to generating predictions on a large set of data offline. 
+    - Batch prediction jobs take longer than online prediction and are useful for precomputing predictions (such as in recommendation systems) and in analyzing your model’s predictions across a large sample of new data.
 - **Streaming**: New data being ingested continuously and need to process this data immediately before sending it to your model for training or prediction
-- **ML pipelines**: multistep solutions for performing feature engineering, training, evaluation, and predictions to handle streaming data
+### Summary ML Life Cycle
+- **ML Life Cycle:** Build ML systm is an iterative process
+  - Developing an ML system is an iterative and, in most cases, never ending process
+  - The speed of going through an iteration of ML lifecycle determines the speed of realizing the value of ML
+  - ML system should support developer with process and tools for fast experiment and iteration
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/64508435/163008848-9a650509-e4be-4248-8630-761399c3b8a9.png" width="600" />
+</p>
+
+- Example of 
+- **ML Pipelines**: multistep solutions for performing feature engineering, training, evaluation, and predictions to handle streaming data
 
 [(Back to top)](#table-of-contents)
 
