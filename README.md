@@ -15,7 +15,7 @@
   - [Machine Learning Engineering for Production (MLOps) Specialization](https://www.coursera.org/specializations/machine-learning-engineering-for-production-mlops)
 - Qwiklab
   - [Build and Deploy Machine Learning Solutions on Vertex AI](https://www.qwiklabs.com/quests/183)
-  - [MLOps with Vertex AI](https://www.qwiklabs.com/focuses/3389?parent=catalog)
+  - [MLOps with Vertex AI](https://www.qwiklabs.com/focuses/3389?parent=catalog): [Github](https://github.com/GoogleCloudPlatform/mlops-with-vertex-ai)
 - Google Cloud
   - [Google Cloud Technical Guides for Startups](https://www.youtube.com/playlist?list=PLIivdWyY5sqJOQJCXW_aYEqwfyi6bu1gC) 
 
