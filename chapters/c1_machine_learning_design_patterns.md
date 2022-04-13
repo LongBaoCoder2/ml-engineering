@@ -60,7 +60,13 @@ A typical machine learning workflow/lifecycle includes:
   <img src="https://user-images.githubusercontent.com/64508435/163008848-9a650509-e4be-4248-8630-761399c3b8a9.png" width="600" />
 </p>
 
-- Example of 
+- Example of R&D ML Workflow (**NOT SCALABLE**):
+  - Manual Process: Data Preparation, Model Training, and Model Evaluation to Trained Model, which is saved in Binary format like `pickle`
+  - There is a cut-off between Data Science & IT world
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/64508435/163084820-7a48f77e-6dd1-4ca2-a809-2c605f1e8681.png" width="600" />
+</p>
+
 - **ML Pipelines**: multistep solutions for performing feature engineering, training, evaluation, and predictions to handle streaming data
 
 [(Back to top)](#table-of-contents)
