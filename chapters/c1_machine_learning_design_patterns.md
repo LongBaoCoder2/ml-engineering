@@ -184,6 +184,13 @@ A typical machine learning workflow/lifecycle includes:
 
 ## 3.1. Production ML System
 ### 3.1.1. Requirements for Production ML System
+#### Reliability
+- **"Correctness"** might be difficult for ML systems. ML system can run, but the model performs bad or gives wrong predictions.
+- **Data Validation**: a very import in ML pipeline 
+  - Data comes in must be in the same distribution with the previous data 
+- **Model Validation**: to ensure good models before deployment
+- **Model Monitoring**
+
 
 # Resources
 
