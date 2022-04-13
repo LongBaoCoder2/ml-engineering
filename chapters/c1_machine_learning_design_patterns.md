@@ -11,11 +11,12 @@ Design patterns are a way to codify the knowledge and experience of experts into
   - [1.4. Roles](#14-roles)
 - [2. Common Challenges in Machine Learning](#2-common-challenges-in-machine-learning)
   - [2.1. Data Quality](#21-data-quality) 
-  - [2.2. Reproducibility](#22-reproducibility)
+  - [2.2. ML Experiment Tracking](#22-ml-experiment-tracking)
   - [2.3. Data Drift](#23-data-drift)
-  - [2.4. Scale](#24-scale)
-  - [2.5. Multiple Objectives](#25-multiple-objectives)
-  - [2.6. Software Engineering Concerns](#26-software-engineering-concerns)
+  - [2.4. Reproducibility](#24-reproducibility)
+  - [2.5. Scale](#24-scale)
+  - [2.6. Multiple Objectives](#26-multiple-objectives)
+  - [2.7. Software Engineering Concerns](#27-software-engineering-concerns)
 - [Resources](#resources)
 
 # 1. Machine Learning Terminology
@@ -123,7 +124,29 @@ A typical machine learning workflow/lifecycle includes:
 - **Data consistency**: for large datasets, it’s common to divide the work of data collection and labeling among a group of people. 
   - Developing a set of standards for this process can help ensure consistency across your dataset, since each person involved in this will inevitably bring their own biases to the process. 
 
-## 2.2. Reproducibility
+## 2.2. ML Experiment Tracking
+- Performing ongoing experimentation of new data sources, ML algorithms, hyperparameters, and then tracking these experiments.
+- [Reference](https://neptune.ai/blog/ml-experiment-tracking)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/64508435/163127304-0fe5881c-f8b0-4006-a7ad-ffad85b4bd46.png" width="600" />
+</p>
+
+## 2.3. Data Drift
+### 2.3.1. Data Drift Definition
+- While machine learning models typically represent a static relationship between inputs and outputs, data can change significantly over time. 
+- **Data drift** (a.k.a `Training-Serving skew`) refers to the challenge of ensuring your machine learning models stay relevant, and that model predictions are an accurate reflection of the environment in which they’re being used.
+  - *Example 1*: let’s say you’re training a model to classify news article headlines into categories like “politics,” “business,” and “technology.” If you train and evaluate your model on historical news articles from the 20th century, it likely won’t perform as well on current data. Today, we know that an article with the word “smartphone” in the headline is probably about technology. However, a model trained on historical data would have no knowledge of this word. 
+  - *Example 2*: an invoice classification model is trained on a limited set of crowdsourced images. It does well on the test set. But once put in production, it is surprised by the diversity of how people fill in the invoice data. Or the low quality of scanned images compared to model training.
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/64508435/163122854-385c54c7-7e7d-4184-843c-e228c8fed9ed.png" width="600" />
+</p>
+
+### 2.3.2. Solution for Data Drift
+- ML system should be able to detect the **data drift** (`training-serving skew`) and alert as soon as possible
+- To solve for drift, it’s important to continually update your training dataset, retrain your model on the fresh data, and modify the weight your model assigns to particular groups of input data.
+  - Exploratory Data Analysis (EDA) can help identify this type of drift and can inform the correct window of data to use for training. 
+
+## 2.4. Reproducibility
 - Machine learning models have an inherent element of randomness. 
   - When training, ML model weights are initialized with random values. 
   - These weights then converge during training as the model iterates and learns from the data. Because of this, the same model code given the same training data will produce slightly different results across training runs. 
@@ -133,30 +156,16 @@ A typical machine learning workflow/lifecycle includes:
   - This can be accelerated by employing distribution strategies like data or model parallelism (see [Chapter 5](#link)). 
   - With this acceleration, however, comes an added challenge of repeatability when you rerun code that makes use of distributed training.
 
-## 2.3. Data Drift
-### 2.3.1. Data Drift Definition
-- While machine learning models typically represent a static relationship between inputs and outputs, data can change significantly over time. 
-- **Data drift** (a.k.a `Training-Serving skew`) refers to the challenge of ensuring your machine learning models stay relevant, and that model predictions are an accurate reflection of the environment in which they’re being used.
-  - Example 1: let’s say you’re training a model to classify news article headlines into categories like “politics,” “business,” and “technology.” If you train and evaluate your model on historical news articles from the 20th century, it likely won’t perform as well on current data. Today, we know that an article with the word “smartphone” in the headline is probably about technology. However, a model trained on historical data would have no knowledge of this word. 
-  - Example 2: an invoice classification model is trained on a limited set of crowdsourced images. It does well on the test set. But once put in production, it is surprised by the diversity of how people fill in the invoice data. Or the low quality of scanned images compared to model training.
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/64508435/163122854-385c54c7-7e7d-4184-843c-e228c8fed9ed.png" width="600" />
-</p>
 
-### 2.3.2. Solution for Data Drift
-- ML system should be able to detect the **data drift** (`training-serving skew`) and alert as soon as possible
-- To solve for drift, it’s important to continually update your training dataset, retrain your model, and modify the weight your model assigns to particular groups of input data.
-  - Exploratory Data Analysis (EDA) can help identify this type of drift and can inform the correct window of data to use for training. 
-
-## 2.4. Scale
+## 2.5. Scale
 - The challenge of scaling is present throughout many stages of a typical machine learning workflow: data collection and preprocessing, training, and serving.
 - For model training, ML engineers are responsible for determining the necessary infrastructure for a specific training job. Depending on the type and size of the dataset, model training can be time consuming and computationally expensive, requiring infrastructure (like GPUs) designed specifically for ML workloads.
 
-## 2.5. Multiple Objectives
+## 2.6. Multiple Objectives
 - There is often a single team responsible for building a machine learning model and many teams across an organization will make use of the model in some way. 
   - For example: you’re building a model to identify defective products from images. As a data scientist, your goal may be to minimize your model’s cross-entropy loss. The product manager, on the other hand, may want to reduce the number of defective products that are misclassified and sent to customers. Finally, the executive team’s goal might be to increase revenue by 30%. Each of these goals vary in what they are optimizing for, and balancing these differing needs within an organization can present a challenge.
 
-## 2.6. Software Engineering Concerns
+## 2.7. Software Engineering Concerns
 - Realtime or Batch
 - Compute resources (CPU/GPU/Memory)
 - Latency, throughput (QPS)
