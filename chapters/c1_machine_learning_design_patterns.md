@@ -136,14 +136,16 @@ A typical machine learning workflow/lifecycle includes:
 ## 2.3. Data Drift
 ### 2.3.1. Data Drift Definition
 - While machine learning models typically represent a static relationship between inputs and outputs, data can change significantly over time. 
-- **Data drift** refers to the challenge of ensuring your machine learning models stay relevant, and that model predictions are an accurate reflection of the environment in which they’re being used.
-  - For example, let’s say you’re training a model to classify news article headlines into categories like “politics,” “business,” and “technology.” If you train and evaluate your model on historical news articles from the 20th century, it likely won’t perform as well on current data. Today, we know that an article with the word “smartphone” in the headline is probably about technology. However, a model trained on historical data would have no knowledge of this word. 
+- **Data drift** (a.k.a `Training-Serving skew`) refers to the challenge of ensuring your machine learning models stay relevant, and that model predictions are an accurate reflection of the environment in which they’re being used.
+  - Example 1: let’s say you’re training a model to classify news article headlines into categories like “politics,” “business,” and “technology.” If you train and evaluate your model on historical news articles from the 20th century, it likely won’t perform as well on current data. Today, we know that an article with the word “smartphone” in the headline is probably about technology. However, a model trained on historical data would have no knowledge of this word. 
+  - Example 2: an invoice classification model is trained on a limited set of crowdsourced images. It does well on the test set. But once put in production, it is surprised by the diversity of how people fill in the invoice data. Or the low quality of scanned images compared to model training.
 <p align="center">
   <img src="https://user-images.githubusercontent.com/64508435/163122854-385c54c7-7e7d-4184-843c-e228c8fed9ed.png" width="600" />
 </p>
 
 ### 2.3.2. Solution for Data Drift
-  - To solve for drift, it’s important to continually update your training dataset, retrain your model, and modify the weight your model assigns to particular groups of input data.
+- ML system should be able to detect the **data drift** (`training-serving skew`) and alert as soon as possible
+- To solve for drift, it’s important to continually update your training dataset, retrain your model, and modify the weight your model assigns to particular groups of input data.
   - Exploratory Data Analysis (EDA) can help identify this type of drift and can inform the correct window of data to use for training. 
 
 ## 2.4. Scale
