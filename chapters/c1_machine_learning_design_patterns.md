@@ -15,6 +15,7 @@ Design patterns are a way to codify the knowledge and experience of experts into
   - [2.3. Data Drift](#23-data-drift)
   - [2.4. Scale](#24-scale)
   - [2.5. Multiple Objectives](#25-multiple-objectives)
+  - [2.6. Software Engineering Concerns](#26-software-engineering-concerns)
 - [Resources](#resources)
 
 # 1. Machine Learning Terminology
@@ -146,6 +147,15 @@ A typical machine learning workflow/lifecycle includes:
 ## 2.5. Multiple Objectives
 - There is often a single team responsible for building a machine learning model and many teams across an organization will make use of the model in some way. 
   - For example: you’re building a model to identify defective products from images. As a data scientist, your goal may be to minimize your model’s cross-entropy loss. The product manager, on the other hand, may want to reduce the number of defective products that are misclassified and sent to customers. Finally, the executive team’s goal might be to increase revenue by 30%. Each of these goals vary in what they are optimizing for, and balancing these differing needs within an organization can present a challenge.
+
+## 2.6. Software Engineering Concerns
+- Realtime or Batch
+- Compute resources (CPU/GPU/Memory)
+- Latency, throughput (QPS)
+- Logging
+- Monitoring
+- Compliance
+- Security and privacy
 
 # Resources
 
