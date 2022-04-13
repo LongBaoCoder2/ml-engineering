@@ -237,9 +237,10 @@ A typical machine learning workflow/lifecycle includes:
 <p align="center">
   <img src="https://user-images.githubusercontent.com/64508435/163131297-2f5cc240-b00a-47bb-967f-d1e4c2efe488.png" width="1000" />
 </p>
+
 - Training/serving skew detection
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/64508435/163131690-d70463bd-1548-4bdb-9702-33792c0c8498.png" width="800" />
+  <img src="https://user-images.githubusercontent.com/64508435/163131690-d70463bd-1548-4bdb-9702-33792c0c8498.png" width="1000" />
 </p>
 
 
