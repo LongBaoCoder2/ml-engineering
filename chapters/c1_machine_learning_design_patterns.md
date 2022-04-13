@@ -231,6 +231,7 @@ A typical machine learning workflow/lifecycle includes:
 - Useful paper trail
 - Standardization
 - Free up development time for data scientists
+
 ### 3.2.1. Data Validation
 - Compute and visualize descriptive statistics
 - Schema validation
@@ -243,9 +244,22 @@ A typical machine learning workflow/lifecycle includes:
   <img src="https://user-images.githubusercontent.com/64508435/163131690-d70463bd-1548-4bdb-9702-33792c0c8498.png" width="1000" />
 </p>
 
+### 3.2.2. Model Evaluation and Validation
+- Evaluate the model performance at **different dimensions of the dataset** to see if the model performance is consistent
+  -  [Visualization Resource](https://www.tensorflow.org/tfx/guide)
+- New model can be deployed when all the desired metrics are much better than the baseline or previous models
+  - Validate a model by setting up value thresholds and change thresholds based on the desired metrics
+    - Accuracy, precision, recall
+    - QPS
+  - Change threshold is useful to gate the candidate model by checking whether the corresponding metric is larger/smaller than that of a baseline model.
+    - Absolute change
+    - Relative change
 
-
-
+### 3.2.3. Model Deployment
+- Various Deployment Strategies
+  - Canarytest
+  - A/B test
+  - Rolling Updates
 # Resources
 
 [(Back to top)](#table-of-contents)
