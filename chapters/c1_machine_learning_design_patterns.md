@@ -22,7 +22,7 @@ Design patterns are a way to codify the knowledge and experience of experts into
     - [3.1.1. Requirements for Production ML System](#311-requirements-for-production-ml-system)  
   - [3.2. ML Pipeline and ML Steps](#32-ml-pipeline-and-ml-steps)
     - [3.2.1. Data Validation](#321-data-validation)
-    - [3.2.2. Model Evaluation and Validation](#322-model-evaluation-and-validation) 
+    - [3.2.2. Model Evaluation and Validation [IMPORTANT]](#322-model-evaluation-and-validation) 
 - [Resources](#resources)
 
 # 1. Machine Learning Terminology
