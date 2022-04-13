@@ -20,6 +20,7 @@ Design patterns are a way to codify the knowledge and experience of experts into
 - [3. Machine Learning System](#3-machine-learning-system)
   - [3.1. Production ML System](#31-production-ml-system)
     - [3.1.1. Requirements for Production ML System](#311-requirements-for-production-ml-system)  
+  - [3.2. ML Pipeline and ML Steps](#32-ml-pipeline-and-ml-steps)
 - [Resources](#resources)
 
 # 1. Machine Learning Terminology
@@ -191,7 +192,43 @@ A typical machine learning workflow/lifecycle includes:
 - **Model Validation**: to ensure good models before deployment
 - **Model Monitoring**
 
+#### Scalability
+- There are multiple ways that an ML system can grow
+  - **Model Complexity**: a single LR v.s. 100M-parameter neural network
+  - **Traffic Volume**: 1000 prediction/day v.s. 1M prediction/day
+  - **Model Counts**: 1 model v.s. 1000 models (ensembles of thousand models)
+- Autoscaling: automatically scaling up and down the number of machines depending on usage
+  - This is an indispensable feature in many cloud services
+- Handling growth isn’t just resource scaling, but also **artifact/metadata** management
 
+#### Maintainability
+- ML-enabled system is a complex undertaking that combines data engineering, ML engineering, and application engineering tasks
+- Many people who will work on an ML system: ML engineers, DevOps engineers, Data analyst, Data scientist
+- Different contributors should be able to work together
+
+#### Adaptability
+- Machine learning problem is dynamic or constantly changing (Behavior of ML system is defined by Data vs Behavior of IT legacy system is defined by Code)
+  - Business requirements
+  - External environment
+- Data distributions may shift accordingly
+- Because ML systems are part code, part data, and data can change quickly, ML systems need to be able to evolve quickly.
+
+#### Iterative Process
+- Developing an ML system is an iterative and, in most cases, never ending process
+- The speed of going through an iteration of ML lifecycle determines the speed of realizing the value of ML
+- ML system should support developer with process and tools for fast experiment and iteration
+- Continuous training, continuous integration and continuous deployment
+
+## 3.2. ML Pipeline and ML Steps
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/64508435/163131008-8e660cef-d4be-487b-bad6-ac1f4d776070.png" width="600" />
+</p>
+
+- Automation of the model life cycle steps
+- Prevention of bugs
+- Useful paper trail
+- Standardization
+- Free up development time for data scientists
 # Resources
 
 [(Back to top)](#table-of-contents)
