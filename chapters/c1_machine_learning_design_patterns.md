@@ -17,6 +17,9 @@ Design patterns are a way to codify the knowledge and experience of experts into
   - [2.5. Scale](#24-scale)
   - [2.6. Multiple Objectives](#26-multiple-objectives)
   - [2.7. Software Engineering Concerns](#27-software-engineering-concerns)
+- [3. Machine Learning System](#3-machine-learning-system)
+  - [3.1. Production ML System](#31-production-ml-system)
+    - [3.1.1. Requirements for Production ML System](#311-requirements-for-production-ml-system)  
 - [Resources](#resources)
 
 # 1. Machine Learning Terminology
@@ -173,6 +176,14 @@ A typical machine learning workflow/lifecycle includes:
 - Monitoring
 - Compliance
 - Security and privacy
+
+# 3. Machine Learning System
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/64508435/163128341-3ae2a6cf-cc93-47b6-b418-7ea7ec8bcd8f.png" width="600" />
+</p>
+
+## 3.1. Production ML System
+### 3.1.1. Requirements for Production ML System
 
 # Resources
 
