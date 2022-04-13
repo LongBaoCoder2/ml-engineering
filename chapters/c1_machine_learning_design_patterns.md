@@ -14,7 +14,7 @@ Design patterns are a way to codify the knowledge and experience of experts into
   - [2.2. ML Experiment Tracking](#22-ml-experiment-tracking)
   - [2.3. Data Drift](#23-data-drift)
   - [2.4. Reproducibility](#24-reproducibility)
-  - [2.5. Scale](#24-scale)
+  - [2.5. Scale](#25-scale)
   - [2.6. Multiple Objectives](#26-multiple-objectives)
   - [2.7. Software Engineering Concerns](#27-software-engineering-concerns)
 - [3. Machine Learning System](#3-machine-learning-system)
@@ -229,6 +229,20 @@ A typical machine learning workflow/lifecycle includes:
 - Useful paper trail
 - Standardization
 - Free up development time for data scientists
+### 3.2.1. Data Validation
+- Compute and visualize descriptive statistics
+- Schema validation
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/64508435/163131297-2f5cc240-b00a-47bb-967f-d1e4c2efe488.png" width="1000" />
+</p>
+- Training/serving skew detection
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/64508435/163131690-d70463bd-1548-4bdb-9702-33792c0c8498.png" width="800" />
+</p>
+
+
+
+
 # Resources
 
 [(Back to top)](#table-of-contents)
