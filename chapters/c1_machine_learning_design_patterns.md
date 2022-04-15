@@ -267,7 +267,7 @@ A typical machine learning workflow/lifecycle includes:
 </p>
 
 ### 3.2.4. Pipeline Orchestration
-
+- Machine learning orchestration tools are used to automate and manage workflows and pipeline infrastructure, with a simple, collaborative interface.
 # Resources
 
 [(Back to top)](#table-of-contents)
