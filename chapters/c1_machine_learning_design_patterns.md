@@ -22,7 +22,9 @@ Design patterns are a way to codify the knowledge and experience of experts into
     - [3.1.1. Requirements for Production ML System](#311-requirements-for-production-ml-system)  
   - [3.2. ML Pipeline and ML Steps](#32-ml-pipeline-and-ml-steps)
     - [3.2.1. Data Validation](#321-data-validation)
-    - [3.2.2. Model Evaluation and Validation [IMPORTANT]](#322-model-evaluation-and-validation) 
+    - [3.2.2. Model Evaluation and Validation [IMPORTANT]](#322-model-evaluation-and-validation)
+    - [3.2.3. Model Deployment](#323-model-deployment)
+    - [3.2.4. Pipeline Orchestration](#324-pipeline-orchestration) 
 - [Resources](#resources)
 
 # 1. Machine Learning Terminology
@@ -257,9 +259,15 @@ A typical machine learning workflow/lifecycle includes:
 
 ### 3.2.3. Model Deployment
 - Various Deployment Strategies
-  - Canarytest
-  - A/B test
-  - Rolling Updates
+  - **Canary test**: a way to reduce risk and validate new software by releasing software to a small percentage of users. 
+  - **A/B test**
+  - **Rolling Updates**
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/64508435/163592380-7e017401-fc56-418d-8069-93800f69ddba.png" width="500" />
+</p>
+
+### 3.2.4. Pipeline Orchestration
+
 # Resources
 
 [(Back to top)](#table-of-contents)
