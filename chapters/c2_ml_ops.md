@@ -18,6 +18,7 @@
   - [2.5. Prediction serving](#25-prediction-serving)
   - [2.6. Continuous monitoring](#26-continuous-monitoring)
   - [2.7. Data and model management](#27-data-and-model-management)
+  - [2.8. End-to-end MLOps workflow](#28-end-to-end-mlops-workflow)
 - [Resources](#resources)
 
 
@@ -40,6 +41,9 @@
 - Increased reliability, performance, scalability, and security of ML systems.
 - Streamlined operational and governance processes.
 - Increased return on investment of ML projects.
+
+[(Back to top)](#table-of-contents)
+
 
 # 2. MLOps Lifecycle and Workflow
 - MLOps Lifecycle is more about *ML System* Life Cycle rather than *ML Solving Problem* Lifecycle
@@ -228,6 +232,14 @@ requests (or mini batches of requests), using interfaces like REST or gRPC.
   <br> Metadata tracking
 </p>
 
+## 2.8. End-to-end MLOps workflow
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/64508435/163671578-c8a1683d-52c4-4076-b665-43841d0c54c0.png" width="600" />
+  <br> Metadata tracking
+</p>
+
+
+[(Back to top)](#table-of-contents)
 
 # Resources
 - [Practitioners guide to MLOps: A framework for continuous delivery and automation of machine learning](https://services.google.com/fh/files/misc/practitioners_guide_to_mlops_whitepaper.pdf)
