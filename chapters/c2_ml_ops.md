@@ -13,6 +13,7 @@
   - [2.0. MLOps capabilities](#20-mlops-capabilities) 
   - [2.1. ML Development](#21-ml-development)
   - [2.2. Training operationalization](#22-training-operationalization)
+  - [2.3. Continuous training](#23-continuous-training)
 - [Resources](#resources)
 
 
@@ -120,11 +121,38 @@ production) to be deployed to the target environment.
 - A *pipeline* typically goes through a *series of testing and staging environments* before it is released to production. 
   - The number of testing and staging environments varies depending on standards that are established in a given organization. 
   - Most organizations have at least one testing environment before production; some have more.
-- The diagram shows a **standard CI/CD workflow**, which consists of
+- The above diagram shows a **standard CI/CD workflow**, which consists of
 these stages:
   - In the CI stage, the source code is unit-tested, and the training pipeline is built and integration-tested. Any artifacts that are created by the build are stored in an artifact repository.
   - In the CD stage, the tested training pipeline artifacts are deployed to a target environment, where the pipeline goes through end-to-end testing before being released to the production environment. Typically, pipelines are tested in non-production environments on a subset of production data, while the full-scale training is performed only in production environments.
   - The newly deployed training pipeline is smoke-tested. If the new pipeline fails to produce a deployable model, the model serving system can fall back to the model that was produced by the current training pipeline.
+
+## 2.3. Continuous training
+- The continuous training process is about orchestrating and automating the execution of training pipelines.
+- How frequently you retrain your model depends on your use case and on the business value and cost of doing so.
+  - For example: if you run a shopping site that has a recommendation system, user behavior changes continually, and retraining frequently on new data captures new trends and patterns. This investment in retraining can lead to higher click-through rates and therefore potential additional purchases.
+- Each run of the **pipeline can be triggered** in several ways, including the following:
+  - Scheduled runs based on jobs that you configure.
+  - Event-driven runs, such as when new data becomes available above a certain threshold, or when model decay is detected by the continuous monitoring process.
+  - Ad hoc runs based on manual invocation.
+- Typical **ML training pipelines** have workflows that include to the following:
+1. **Data ingestion**: Training data is extracted from the source dataset and feature repository using filtering criteria such as the date and time of the most recent update.
+2. **Data validation**: The extracted training data is validated to make sure that the model is not trained using skewed or corrupted data.
+3. **Data transformation**: The data is split, typically into training, evaluation, and testing splits. The data is then transformed, and the features are engineered as expected by the model.
+4. **Model training and tuning**: The ML model is trained and the hyperparameters are tuned using the training and evaluation data splits to produce the best possible model.
+5. **Model evaluation** The model is evaluated against the test data split to assess the performance of the model using various evaluation metrics on different partitions of the data.
+6. **Model validation**: The results of model evaluations are validated to make sure that the model meets the expected performance criteria.
+7. **Model registration**: The validated model is stored in a model registry along with its metadata.
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/64508435/163670475-c9e9f3be-eb7e-40f7-8966-c8011b96abf8.png" width="800" />
+  <br>The continuous training process
+</p>
+- As the diagram shows, the continuous training pipeline runs based on a **retraining trigger**. When the pipeline starts, it extracts a fresh training dataset from the `dataset and feature repository`, executes the steps in the `ML workflow`, and submits a trained model to the `model registry`. All the run information and the artifacts that are produced throughout the pipeline run are tracked in the `metadata and artifact repository`.
+- An orchestrated and **automated** `training pipeline` mirrors the steps of the typical data science process that runs in the **ML development** phase. 
+
+
+
+
 # Resources
 - [Practitioners guide to MLOps: A framework for continuous delivery and automation of machine learning](https://services.google.com/fh/files/misc/practitioners_guide_to_mlops_whitepaper.pdf)
 [(Back to top)](#table-of-contents)
