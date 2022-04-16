@@ -68,8 +68,39 @@
 
 
 ## 2.1. ML Development
-
-
+- **Experimentation** is the core activity in ML development.
+  - The following questions have been answered
+    - What is the task?
+    - How can we measure business impact?
+    - What is the evaluation metric?
+    - What is the relevant data?
+    - What are the training and serving requirements?
+  - Experimentation aims to arrive at an effective prototype model for the ML use case
+  - During experimentation, data scientists typically perform the following steps:
+    - Data discovery, selection, and exploration.
+    - Data preparation and feature engineering, using interactive data processing tools.
+    - Model prototyping and validation.
+- **Training Formalization**:  to formalize their ML training procedures by implementing an end-to-end pipeline, so that the procedures can be operationalized and run in production.
+- **The primary source of development data**: the dataset and feature repository. This repository contains curated data
+assets that are managed on either the entity-features level or the full dataset level.
+- **The key success aspects for this process**: experiment tracking, reproducibility, and collaboration. 
+  - To be able to reproduce an experiment, your data science team needs to track configurations for each experiment, including the following:
+    - A pointer to the version of the training code in the version control system.
+    - The model architecture and pretrained modules that were used.
+    - Hyperparameters, including trials of automated hyperparameter tuning and model selection.
+    - Information about training, validation, and testing data splits that were used.
+    - Model evaluation metrics and the validation procedure that was used.
+- **The output of ML development process**: the *implementation of the continuous training pipeline* (not the model to be deployed in
+production) to be deployed to the target environment. 
+- **Typical assets produced in ML development process** include the following:
+  - Notebooks for experimentation and visualization
+  - Metadata and artifacts of the experiments
+  - Data schemas
+  - Query scripts for the training data
+  - Source code and configurations for data validation and transformation
+  - Source code and configurations for creating, training, and evaluating models
+  - Source code and configurations for the training-pipeline workflow
+  - Source code for unit tests and integration tests
 # Resources
 - [Practitioners guide to MLOps: A framework for continuous delivery and automation of machine learning](https://services.google.com/fh/files/misc/practitioners_guide_to_mlops_whitepaper.pdf)
 [(Back to top)](#table-of-contents)
