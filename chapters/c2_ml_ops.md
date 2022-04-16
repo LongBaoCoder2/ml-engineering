@@ -10,6 +10,8 @@
   - [1.2. MLOps vs DevOps](#12-mlops-vs-devops)
   - [1.3. Benefits of MLOps practices](#13-benefits-of-mlops-practices)
 - [2. MLOps Lifecycle and Workflow](#2-mlops-lifecycle-and-workflow)
+  - [2.0. MLOps capabilities](#20-mlops-capabilities) 
+  - [2.1. ML Development](#21-ml-development) 
 - [Resources](#resources)
 
 
@@ -36,7 +38,8 @@
 # 2. MLOps Lifecycle and Workflow
 - MLOps Lifecycle is more about *ML System* Life Cycle rather than *ML Solving Problem* Lifecycle
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/64508435/163659032-f37a8ede-220b-4d20-a368-0d8fec3e4dae.png" width="600" />
+  <img src="https://user-images.githubusercontent.com/64508435/163659925-3b029f87-e12d-4b4e-ae84-377638092418.png" width="600" />
+  <br>MLOps Lifecyle
 </p>
 
 - **ML development**: developing a robust and reproducible model training procedure (training *pipeline* code).
@@ -46,8 +49,22 @@
 - **Prediction serving**: about serving the model that is deployed in production for inference.
 - **Continuous monitoring**: about monitoring the effectiveness and efficiency of a deployed model.
 - **Data and model management**: a central, cross-cutting function for governing ML artifacts to support *auditability*, *traceability*, and *compliance*.
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/64508435/163659900-05058897-8897-458d-b877-9f63508b2a43.png" width="600" />
+  <br>MLOps Workflow
+</p>
+
+## 2.0. MLOps capabilities
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/64508435/163660041-a7a2ecbc-a8c9-436b-9639-98d7536802cf.png" width="600" />
+  <br>Core MLOps technical capabilities
+</p>
+
+
+## 2.1. ML Development
+
 
 # Resources
-
+- [Practitioners guide to MLOps: A framework for continuous delivery and automation of machine learning](https://services.google.com/fh/files/misc/practitioners_guide_to_mlops_whitepaper.pdf)
 [(Back to top)](#table-of-contents)
 
