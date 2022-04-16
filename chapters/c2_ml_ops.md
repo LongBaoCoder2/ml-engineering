@@ -68,6 +68,12 @@
 
 
 ## 2.1. ML Development
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/64508435/163666296-0aa65ff8-35f4-42dc-8c48-86138c7bc6b0.png" width="800" />
+  <br>The ML development process
+</p>
+
+
 - **Experimentation** is the core activity in ML development.
   - The following questions have been answered
     - What is the task?
