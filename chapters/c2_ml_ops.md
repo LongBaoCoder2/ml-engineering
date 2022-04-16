@@ -14,6 +14,8 @@
   - [2.1. ML Development](#21-ml-development)
   - [2.2. Training operationalization](#22-training-operationalization)
   - [2.3. Continuous training](#23-continuous-training)
+  - [2.4. Model Deployment](#24-model-deployment)
+  - [2.5. Prediction serving](#25-prediction-serving)
 - [Resources](#resources)
 
 
@@ -162,6 +164,33 @@ observed. The pipeline can apply complex validation logic in this step, includin
     - Retrieve processed data snapshots after transformation steps, if feasible.
     - Retrieve data summaries such as descriptive statistics, schemas, and feature distributions
 
+## 2.4. Model Deployment
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/64508435/163670734-a2b8b69c-fdc2-4d1f-a27f-653d6f88091b.png" width="800" />
+  <br>A complex CI/CD system for the model deployment process
+</p>
+- In the CI stage of model deployment, tests might include testing your model interface to see if it accepts the expected input format and if it produces the expected output. You might also validate the compatibility of the model with the target infrastructure, such as checking for required packages and accelerators. During this stage, you might also check that the model’s latency is acceptable.
+- In the CD stage of model deployment, the model undergoes progressive delivery. Canary deployments, blue-green deployments, and shadow deployments are often used to perform smoke testing, which usually focuses on model service efficiency like latency and throughput, as well as on service errors. After you verify that the model works technically, you test the model’s effectiveness in production by gradually serving it alongside the existing model and running online experiments, which refers to testing new functionality in production with live traffic.
+- In the **progressive delivery approach**, a new model candidate does not immediately replace the previous version. 
+  - Instead, after the new model is deployed to production, it runs in parallel to the previous version. A subset of users is redirected to the new model in stages, according to the online experiment in place. The outcome of the experiments is the final criterion that decides whether the model can be fully released and can replace the previous version. 
+  - [A/B testing](https://en.wikipedia.org/wiki/A/B_testing) and [multi-armed bandit (MAB)](https://en.wikipedia.org/wiki/Multi-armed_bandit) testing are common online experimentation techniques that you can use to quantify
+the impact of the new model on application-level objectives. 
+  - Canary and shadow deployment methods can facilitate such online experiments.
+
+## 2.5. Prediction serving
+- In the **prediction serving process**, after the model is deployed to its target environment, the model service starts to accept prediction requests (serving data) and to serve responses with predictions.
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/64508435/163670884-310b704d-2c20-4000-8bae-39d40faabf0e.png" width="600" />
+  <br> Elements of the prediction serving process
+</p>
+
+- The serving engine can serve predictions to consumers in the following forms:
+  - **Online inference** in near real time for high-frequency singleton
+requests (or mini batches of requests), using interfaces like REST or gRPC.
+  - **Streaming inference** in near real time, such as through an event-processing pipeline.
+  - **Offline batch inference** for bulk data scoring, usually integrated with extract, transform, load (ETL) processes.
+  - **Embedded inference** as part of embedded systems or edge devices.
+- The inference logs and other serving metrics are stored for continuous monitoring and analysis.
 
 # Resources
 - [Practitioners guide to MLOps: A framework for continuous delivery and automation of machine learning](https://services.google.com/fh/files/misc/practitioners_guide_to_mlops_whitepaper.pdf)
