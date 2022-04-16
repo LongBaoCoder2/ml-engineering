@@ -267,7 +267,19 @@ A typical machine learning workflow/lifecycle includes:
 </p>
 
 ### 3.2.4. Pipeline Orchestration
-- Machine learning orchestration tools are used to automate and manage workflows and pipeline infrastructure, with a simple, collaborative interface.
+- Pipeline tools manage the flow of tasks through a graph representation of the task dependencies. (check Meta Data, visualise Dependencies)
+- The pipeline steps are directed, which guarantees that the path of execution is clearly defined by the tasks’ dependencies
+- Triggering of the pipeline:
+  - On-demand
+  - On-schedule
+  - On-availability of new data
+  - On-model performance degradation
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/64508435/163656235-54d6d93b-b941-4594-9622-38fcbf20ef80.png" width="500" />
+  <br>Example: Vertex AI Pipeline
+</p>
+
+
 # Resources
 
 [(Back to top)](#table-of-contents)
