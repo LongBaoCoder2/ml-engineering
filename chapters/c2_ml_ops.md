@@ -16,6 +16,8 @@
   - [2.3. Continuous training](#23-continuous-training)
   - [2.4. Model Deployment](#24-model-deployment)
   - [2.5. Prediction serving](#25-prediction-serving)
+  - [2.6. Continuous monitoring](#26-continuous-monitoring)
+  - [2.7. Data and model management](#27-data-and-model-management)
 - [Resources](#resources)
 
 
@@ -169,6 +171,7 @@ observed. The pipeline can apply complex validation logic in this step, includin
   <img src="https://user-images.githubusercontent.com/64508435/163670734-a2b8b69c-fdc2-4d1f-a27f-653d6f88091b.png" width="800" />
   <br>A complex CI/CD system for the model deployment process
 </p>
+
 - In the CI stage of model deployment, tests might include testing your model interface to see if it accepts the expected input format and if it produces the expected output. You might also validate the compatibility of the model with the target infrastructure, such as checking for required packages and accelerators. During this stage, you might also check that the model’s latency is acceptable.
 - In the CD stage of model deployment, the model undergoes progressive delivery. Canary deployments, blue-green deployments, and shadow deployments are often used to perform smoke testing, which usually focuses on model service efficiency like latency and throughput, as well as on service errors. After you verify that the model works technically, you test the model’s effectiveness in production by gradually serving it alongside the existing model and running online experiments, which refers to testing new functionality in production with live traffic.
 - In the **progressive delivery approach**, a new model candidate does not immediately replace the previous version. 
@@ -191,6 +194,40 @@ requests (or mini batches of requests), using interfaces like REST or gRPC.
   - **Offline batch inference** for bulk data scoring, usually integrated with extract, transform, load (ETL) processes.
   - **Embedded inference** as part of embedded systems or edge devices.
 - The inference logs and other serving metrics are stored for continuous monitoring and analysis.
+
+## 2.6. Continuous monitoring
+- Continuous monitoring is the process of monitoring the effectiveness and efficiency of a model in production, which is a crucial area of MLOps.
+- The monitoring engine uses the inference logs to identify anomalies (skews and outliers)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/64508435/163671031-7a129af7-8bb9-4644-b56e-bb75ae8454fd.png" width="600" />
+  <br>The continuous monitoring process
+</p>
+
+- Effectiveness performance monitoring aims to detect model decay. 
+- **Model decay** is usually defined in terms of data and concept drift. Apart from that, other techniques can be used: novelty and outlier detection, as well as feature attributions change.
+  - **Data drift** describes a growing skew between the dataset that was used to train, tune, and evaluate the model and the production data that a model
+  receives for scoring. Data drift can involve two types of skews:
+    - `Schema skew` occurs when training data and serving data do not conform to the same schema.
+    - `Distribution skew` occurs when the distribution of feature values for training data is significantly different from the distribution for serving data.
+  - **Concept drift** is an evolving relationship between the input predictors and the target feature.
+- For more information: [ML model monitoring: Logging serving requests by using AI Platform Prediction](https://cloud.google.com/architecture/ml-modeling-monitoring-logging-serving-requests-using-ai-platform-prediction#overview_of_ml_model_monitoring)
+
+## 2.7. Data and model management
+- **Data and model management** is a central function for governing ML artifacts in order to support auditability, traceability, and compliance, as well as for shareability, reusability, and discoverability of ML assets.
+### 2.7.1. Dataset and feature management
+- a unified repository for ML features and datasets.
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/64508435/163671378-1564b8b8-a0aa-4727-93b6-0d1a19a29c93.png" width="600" />
+  <br>Using the dataset and feature repository to provide entities for multiple uses
+</p>
+
+### 2.7.2. Model management
+- Model management is a cross-cutting process that is at the center of MLOps which entails both ML metadata tracking and model governance. 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/64508435/163671463-4fe04ccb-b7a3-4838-8996-b5a764f2a960.png" width="600" />
+  <br> Metadata tracking
+</p>
+
 
 # Resources
 - [Practitioners guide to MLOps: A framework for continuous delivery and automation of machine learning](https://services.google.com/fh/files/misc/practitioners_guide_to_mlops_whitepaper.pdf)
