@@ -17,6 +17,8 @@
 - Qwiklab
   - [Build and Deploy Machine Learning Solutions on Vertex AI](https://www.qwiklabs.com/quests/183)
   - [MLOps with Vertex AI](https://www.qwiklabs.com/focuses/3389?parent=catalog): [Github](https://github.com/GoogleCloudPlatform/mlops-with-vertex-ai)
+- MLOps:
+  - [Practitioners guide to MLOps: A framework for continuous delivery and automation of machine learning](https://services.google.com/fh/files/misc/practitioners_guide_to_mlops_whitepaper.pdf)
 - Google Cloud
   - [Google Cloud Technical Guides for Startups](https://www.youtube.com/playlist?list=PLIivdWyY5sqJOQJCXW_aYEqwfyi6bu1gC) 
 
