@@ -3,6 +3,7 @@
 # Table of contents
 - [Table of contents](#table-of-contents)
 - [1. Machine Learning Design Patterns](./chapters/c1_machine_learning_design_patterns.md)
+- [2. ML Ops](./chapters/c2_ml_ops.md)
 - [Resources](#resources)
 
 
