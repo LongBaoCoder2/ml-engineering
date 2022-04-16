@@ -55,8 +55,14 @@
 </p>
 
 ## 2.0. MLOps capabilities
+- To effectively implement the key MLOps processes outlined in the previous section, organizations need to establish a set of core technical capabilities.
+  -  IT workload, such as a reliable, scalable, and secure compute infrastructure.
+  -  Standardized configuration management and CI/CD capabilities to build, test, release, and operate software systems rapidly and reliably, including ML systems.
+  -  A set of core MLOps capabilities. These include experimentation, data-processing, model training, model evaluation, model serving, online experimentation, model monitoring, ML pipeline, and model registry
+  -  ML metadata and artifact repository
+  -  ML dataset and feature repository
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/64508435/163660041-a7a2ecbc-a8c9-436b-9639-98d7536802cf.png" width="600" />
+  <img src="https://user-images.githubusercontent.com/64508435/163660041-a7a2ecbc-a8c9-436b-9639-98d7536802cf.png" width="500" />
   <br>Core MLOps technical capabilities
 </p>
 
