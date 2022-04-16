@@ -11,7 +11,8 @@
   - [1.3. Benefits of MLOps practices](#13-benefits-of-mlops-practices)
 - [2. MLOps Lifecycle and Workflow](#2-mlops-lifecycle-and-workflow)
   - [2.0. MLOps capabilities](#20-mlops-capabilities) 
-  - [2.1. ML Development](#21-ml-development) 
+  - [2.1. ML Development](#21-ml-development)
+  - [2.2. Training operationalization](#22-training-operationalization)
 - [Resources](#resources)
 
 
@@ -73,7 +74,6 @@
   <br>The ML development process
 </p>
 
-
 - **Experimentation** is the core activity in ML development.
   - The following questions have been answered
     - What is the task?
@@ -107,6 +107,24 @@ production) to be deployed to the target environment.
   - Source code and configurations for creating, training, and evaluating models
   - Source code and configurations for the training-pipeline workflow
   - Source code for unit tests and integration tests
+
+## 2.2. Training operationalization
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/64508435/163669216-5b4f86e6-5866-4de6-bc2e-23091c3675b7.png" width="800" />
+  <br>The training operationalization process
+</p>
+
+- **Training operationalization** is the process of building and testing a repeatable ML training pipeline and then deploying it to a target execution environment. 
+  - For MLOps, ML engineers should be able to use *configurations to deploy the ML pipelines*. 
+- **The configurations**: specify variables like the target deployment environment (development, test, staging, and so on), the data sources to access during execution in each environment, and the service account to use for running compute workloads. 
+- A *pipeline* typically goes through a *series of testing and staging environments* before it is released to production. 
+  - The number of testing and staging environments varies depending on standards that are established in a given organization. 
+  - Most organizations have at least one testing environment before production; some have more.
+- The diagram shows a **standard CI/CD workflow**, which consists of
+these stages:
+  - In the CI stage, the source code is unit-tested, and the training pipeline is built and integration-tested. Any artifacts that are created by the build are stored in an artifact repository.
+  - In the CD stage, the tested training pipeline artifacts are deployed to a target environment, where the pipeline goes through end-to-end testing before being released to the production environment. Typically, pipelines are tested in non-production environments on a subset of production data, while the full-scale training is performed only in production environments.
+  - The newly deployed training pipeline is smoke-tested. If the new pipeline fails to produce a deployable model, the model serving system can fall back to the model that was produced by the current training pipeline.
 # Resources
 - [Practitioners guide to MLOps: A framework for continuous delivery and automation of machine learning](https://services.google.com/fh/files/misc/practitioners_guide_to_mlops_whitepaper.pdf)
 [(Back to top)](#table-of-contents)
