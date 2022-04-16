@@ -273,7 +273,7 @@ A typical machine learning workflow/lifecycle includes:
   - On-demand
   - On-schedule
   - On-availability of new data
-  - On-model performance degradation
+  - On-model performance degradation: if the model degrades to a certain threshold, the pipeline will be triggered.
 <p align="center">
   <img src="https://user-images.githubusercontent.com/64508435/163656235-54d6d93b-b941-4594-9622-38fcbf20ef80.png" width="500" />
   <br>Example: Vertex AI Pipeline
