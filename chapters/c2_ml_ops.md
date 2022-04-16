@@ -147,10 +147,20 @@ these stages:
   <img src="https://user-images.githubusercontent.com/64508435/163670475-c9e9f3be-eb7e-40f7-8966-c8011b96abf8.png" width="800" />
   <br>The continuous training process
 </p>
+
 - As the diagram shows, the continuous training pipeline runs based on a **retraining trigger**. When the pipeline starts, it extracts a fresh training dataset from the `dataset and feature repository`, executes the steps in the `ML workflow`, and submits a trained model to the `model registry`. All the run information and the artifacts that are produced throughout the pipeline run are tracked in the `metadata and artifact repository`.
 - An orchestrated and **automated** `training pipeline` mirrors the steps of the typical data science process that runs in the **ML development** phase. 
-
-
+  - However, *the automated pipeline has some differences*. 
+  - In an automated pipeline, **data validation and model validation** play a critical role in a way that they don’t during experimentation; these steps are gatekeepers for the overall ML training process. Runs of an automated pipeline are unattended. Therefore, as the runs are executed, the training and evaluation data can evolve to a point where the data processing and training procedures that are implemented by the pipeline are no longer optimal, and possibly are no longer valid.
+    - The **data validation step** can detect when data anomalies start occuring. These anomalies can include new features, new feature domains, features that have disappeared, and drastic changes in feature distributions. The data validation step works by comparing the new training data to the expected data schema and reference statistics. For details about how data validation works, see [Analyzing and validating data at scale for machine learning with TensorFlow Data Validation](https://cloud.google.com/architecture/analyzing-and-validating-data-at-scale-for-ml-using-tfx). 
+    - The **model validation phase** detects anomalies when a lack of improvement or even a degradation in performance of new model candidates is
+observed. The pipeline can apply complex validation logic in this step, including several evaluation metrics, sensitivity analysis based on specific inputs, calibration, and fairness indicators.
+- **An important aspect of continuous training**, therefore, is **tracking**. Pipeline runs must track generated metadata and artifacts in a way that enables debugging, reproducibility, and lineage analysis. 
+  - `Lineage` analysis means being able to track a trained model back to the dataset (snapshot) that was used to train that model, and to link all the intermediate artifacts and metadata. Lineage analysis supports the following:
+    - Retrieve the hyperparameters that are used during training.
+    - Retrieve all evaluations that are performed by the pipeline.
+    - Retrieve processed data snapshots after transformation steps, if feasible.
+    - Retrieve data summaries such as descriptive statistics, schemas, and feature distributions
 
 
 # Resources
