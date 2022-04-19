@@ -159,8 +159,64 @@ Hireachy: Amazon S3 > Buckets > neuron-server (bucket_name)
   
 - Use RESTFUL API to insert data into the database via POST method.
   - `201`: operation is successsfully applied. 
+  - Insert a document without an ID 
 <img width="1052" alt="Screenshot 2022-04-19 at 20 45 36" src="https://user-images.githubusercontent.com/64508435/164007166-4e681580-b860-49e6-912c-d1e7e0489bc0.png">
 
+  - Insert a document with an ID
+<img width="787" alt="Screenshot 2022-04-19 at 20 48 02" src="https://user-images.githubusercontent.com/64508435/164007533-2f332ad8-a0a8-4edb-9f5e-89dbd252f344.png">
+  
+  - Retrieve a document based on ID
+<img width="787" alt="Screenshot 2022-04-19 at 20 51 29" src="https://user-images.githubusercontent.com/64508435/164008122-9b311e61-e45d-4be7-a544-39fbaf4eaff9.png">
+
+- Simple search operations: Simple Lucene-style search
+- <img width="679" alt="Screenshot 2022-04-19 at 20 52 35" src="https://user-images.githubusercontent.com/64508435/164008338-81a8550b-b0c7-4e92-99a2-22ad1f364844.png">
+<img width="476" alt="Screenshot 2022-04-19 at 20 55 10" src="https://user-images.githubusercontent.com/64508435/164008775-95009fdd-79f7-4895-bdb8-58d6729f023b.png">
+#### Domain-Specific Language (DSL)
+-  Query in a tree structure
+-  The first part query context is involved in the score function
+- The second part filter context includes filtering conditions
+- "must" condition: must have 
+- "filter" condition: add some scores, if a good match, the score will be high.
+- Boolean query combines 
+  - Must query
+  - Filter query
+  - Should query
+  - Must_not query
+
+<img width="385" alt="Screenshot 2022-04-19 at 20 57 35" src="https://user-images.githubusercontent.com/64508435/164009180-26a5bf97-e383-4481-9491-7fa3ea8e63a1.png">
+
+- Boosting query combines 
+  - Positive query
+  - Negative query
+#### what makes ElasticSearch different
+
+<img width="734" alt="Screenshot 2022-04-19 at 21 00 14" src="https://user-images.githubusercontent.com/64508435/164009708-a6f6ec9a-5b16-4b97-a5dd-0a8bb0c75744.png">
+- Chracter Filter in Analyzer: Elastic Search can ignore the 
+
+<img width="548" alt="Screenshot 2022-04-19 at 21 01 18" src="https://user-images.githubusercontent.com/64508435/164009906-aae86f34-701e-4808-bb43-ff4e7a705a86.png">
+
+- Tokenizer in Analyzer
+  - Break sentence into tokens
+  - Every analyzer has exactly one tokenizer
+  - Stem
+
+  - Transformation over the tokens 
+    - Convert to lower-case
+    - Stemming
+    - Synonyms
+
+- html_strip: a character filter to remove any HTML character texts.
+<img width="977" alt="Screenshot 2022-04-19 at 21 02 51" src="https://user-images.githubusercontent.com/64508435/164010157-99bfed91-d77b-4c41-aaf1-e5bded61ae90.png">
+
+
+- When Elastic Search? And When MongoDB?
+- Use Elastic Search: search over the documents, log analysis from IoT system.
+  - An internal search engine over massive documents
+  - Advanced text search involving complex text pre-processing
+- Use MongoDB: dump all the data
+  - A general-purpose database for all sorts of data
+  - An engine with data retrieval based data id or batches 
+  - **High performance** as *object* store in compare with Elastic Search. 
 
 # Resources
 
