@@ -136,7 +136,7 @@ Hireachy: Amazon S3 > Buckets > neuron-server (bucket_name)
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/64508435/164001761-c531c951-65b9-4f64-9e49-1a2b450604d9.png" width="550" />
-  <br>Base64 deencoding in Python 
+  <br>Base64 decoding in Python 
 </p>
 
 
