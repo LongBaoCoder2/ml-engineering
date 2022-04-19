@@ -102,6 +102,7 @@ Hireachy: Amazon S3 > Buckets > neuron-server (bucket_name)
 ## 2.3. MongoDB
 - `JSON format`: to organize data in the plain text, so that any machine can understand the data format
 - MongoDB: to manage the collection of these `json` documents and you can query the data. 
+  - In practice: MongoDB is used as the data warehouse.   
   - **No Schema**: it can accept any json format, **need to be very careful**.
   - GUI: Robo3T
 - MongoDB client with Python: `pymongo`
@@ -139,9 +140,26 @@ Hireachy: Amazon S3 > Buckets > neuron-server (bucket_name)
   <br>Base64 decoding in Python 
 </p>
 
+## 2.4. ElasticSearch
+- ElasticSearch behaves like a search engine
+  - The adoption of RESTful interface
+  - Its very unique score function over **text search queries**
+  - Powerful query language over text data
+  - Strong consistency guarantee
+- The demand of text search is more complicated
+<img width="1126" alt="Screenshot 2022-04-19 at 20 43 11" src="https://user-images.githubusercontent.com/64508435/164006572-c6ac4bfd-8c35-4dd9-9cc3-5fbe13fcc82c.png">
 
+- ElasticSearch organizes documents in a **hierarchy** and provide search functions
 
+<img width="618" alt="Screenshot 2022-04-19 at 20 43 49" src="https://user-images.githubusercontent.com/64508435/164006882-59da250c-fd2e-4ef9-8bfc-503a2cf2d486.png">
 
+- No need the command-line, but via Browser, you can connect to ElasticSearch database
+- For example: create `hardwarezone` database on ElasticSearch
+  <img width="986" alt="Screenshot 2022-04-19 at 20 44 42" src="https://user-images.githubusercontent.com/64508435/164007027-77a70c7b-9e6b-4157-9645-be57b85aad5c.png">
+  
+- Use RESTFUL API to insert data into the database via POST method.
+  - `201`: operation is successsfully applied. 
+<img width="1052" alt="Screenshot 2022-04-19 at 20 45 36" src="https://user-images.githubusercontent.com/64508435/164007166-4e681580-b860-49e6-912c-d1e7e0489bc0.png">
 
 
 # Resources
