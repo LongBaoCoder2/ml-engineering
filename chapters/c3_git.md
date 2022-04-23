@@ -5,10 +5,11 @@
 - [1. Basics of Git](#1-basics-of-git)
   - [1.1. Centralized Version Control](#11-centralized-version-control) 
   - [1.2. Decentralized Cersion Control](#12-decentralized-version-control)
-    - [1.2.1. Basics Git Commands](#121-basics-git-commands)
   - [1.3. Branches and Commits](#13-branches-and-commits)
     - [1.3.1. Conflicts in Version Control](#131-conflicts-in-version-control)
-    - [1.3.2. Merge a Branch to the Master]()
+    - [1.3.2. Merge a Branch to the Master](#132-merge-a-branch-to-the-master)
+- [2. Git Commands](#2-git-commands)
+  - [2.1. Basics Git Commands](#21-basics-git-commands)
 - [Resources](#resources)
 
 
@@ -37,25 +38,6 @@
 <p align="center">
   <img src="https://user-images.githubusercontent.com/64508435/163991479-16f40c48-1d3d-4383-9253-51dec9b2e10f.png" width="350" />
 </p>
-
-[(Back to top)](#table-of-contents)
-
-### 1.2.1. Basics Git Commands
-- `git init`: create a local repo
-- `git remote add origin <link_to_remote_server>`: to link the local repo to the remote repo
-- `git add <name_of_file>`:  to add a file/files to the stage
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/64508435/164873696-03b0923b-4f05-488d-9453-899b37647901.png" width="650" />
-</p>
-
-- `git commit -m "message"`: to push the commit to the local repo
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/64508435/164873754-9219d7eb-e292-485b-80d6-f2563d7eb9f8.png" width="450" />
-</p>
-
-- `git push -u origin master`: to push the updated files from local repo to remote repo
-  - `-u`: to set the upstream as `origin master` 
-- `git pull origin <branch_name>`: to pull the latest update from the current branch in the remote server.
 
 [(Back to top)](#table-of-contents)
 
@@ -92,3 +74,24 @@
 
 
 [(Back to top)](#table-of-contents)
+# 2. Git Commands
+## 2.1 Basics Git Commands
+- `git init`: create a local repo
+- `git remote add origin <link_to_remote_server>`: to link the local repo to the remote repo
+- `git add <name_of_file>`:  to add a file/files to the stage
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/64508435/164873696-03b0923b-4f05-488d-9453-899b37647901.png" width="650" />
+</p>
+
+- `git commit -m "message"`: to push the commit to the local repo
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/64508435/164873754-9219d7eb-e292-485b-80d6-f2563d7eb9f8.png" width="450" />
+</p>
+
+- `git push -u origin master`: to push the updated files from local repo to remote repo
+  - `-u`: to set the upstream as `origin master` 
+- `git pull origin <branch_name>`: to pull the latest update from the current branch in the remote server.
+
+[(Back to top)](#table-of-contents)
+
+# Resources
