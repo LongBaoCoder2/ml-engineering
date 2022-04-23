@@ -21,5 +21,6 @@
   - [Practitioners guide to MLOps: A framework for continuous delivery and automation of machine learning](https://services.google.com/fh/files/misc/practitioners_guide_to_mlops_whitepaper.pdf)
 - Google Cloud
   - [Google Cloud Technical Guides for Startups](https://www.youtube.com/playlist?list=PLIivdWyY5sqJOQJCXW_aYEqwfyi6bu1gC) 
+  - [Google Cloud Skills Boost](https://www.cloudskillsboost.google/?fbclid=IwAR364ZTVlEktlPxDACgjm6F2GmkllkTi2HGRVOW_5hsbpU0GNAOyAQT6Chg)
 
 [(Back to top)](#table-of-contents)
