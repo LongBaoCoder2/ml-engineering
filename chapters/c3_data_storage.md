@@ -4,13 +4,15 @@
 # Table of contents
 - [Table of contents](#table-of-contents)
 - [1. Basics of Git](#1-basics-of-git)
+  - [1.1. Centralized Version Control](#11-centralized-version-control) 
+  - [1.2. Decentralized Cersion Control](#12-decentralized-version-control)
 - [2. Storage for Complex ML Data](#2-storage-for-complex-ml-data)
 - [Resources](#resources)
 
 
 # 1. Basics of Git
-## 1.1. Centralized version control
-- Limitations:
+## 1.1. Centralized Version Control
+- **Limitations**:
   - If the main server goes down, developers can’t save versioned changes
   - Remote commits are slow
   - Unsolicited changes might ruin development
@@ -19,8 +21,9 @@
   <img src="https://user-images.githubusercontent.com/64508435/163991997-a63f4f8a-0f39-4b0f-8fab-ff6f2dd5623d.png" width="350" />
 </p>
 
+- **Solution**: Decentralized version control
 
-## 1.2. Decentralized version control
+## 1.2. Decentralized Version Control
 - Local repos host all versions
   - `pull`: get the updates from central server
   - `push`: send the updated repos to the central server
