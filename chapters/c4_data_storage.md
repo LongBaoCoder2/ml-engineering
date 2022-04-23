@@ -5,8 +5,13 @@
 - [Table of contents](#table-of-contents)
 - [1. Storage for Complex ML Data](#1-storage-for-complex-ml-data)
   - [1.1. Why Storage matters to ML](#11-why-storage-matters-to-ml)
-  - [1.2. Object Store: Amazon S3](#12-amazon-s3)
-  - [1.3. Document Store: Mongo DB](#13-mongodb)
+- [2. Object Store: Amazon S3](#2-amazon-s3)
+  - [2.1. Access S3 with Python](#21-access-s3-with-python) 
+- [3. Document Store: Mongo DB](#3-mongodb)
+  - [3.1. Access MongoDB with Python](#31-access-mongodb-with-python)
+  - [3.2. Comparison between RDBMS vs MongoDB](#32-comparison-between-rdbms-vs-mongodb) 
+  - [3.3. Complex Object Storage in MongoDB](#33-complex-object-storage-in-mongodb)
+  - [3.4. Command Lines](#34-command-lines)
 - [Resources](#resources)
 
 
@@ -28,7 +33,7 @@
     - Elastic Search: Plain text, search index needed
       - For ex: text logs from the systems
 
-## 1.2. Amazon S3 
+# 2. Amazon S3 
 - It’s originally proposed by AWS, but not almost every cloud provides a copycat
 - Simple Idea: every **object** (binary string) is indexed with 2 strings
   - A bucket name
@@ -39,7 +44,8 @@
 
 - This `.JPG` image is stored in S3.
   - Hireachy: Amazon S3 &#8594; Buckets &#8594; neuron-server (bucket_name)
-### 1.2.1. How to access S3 via Python
+
+## 2.1. Access S3 with Python
 <p align="center">
   <img src="https://user-images.githubusercontent.com/64508435/163997320-1d40da2f-be81-48a4-822e-cbb64a43bc4b.png" width="550" />
 </p>
@@ -48,29 +54,40 @@
   - `boto3`: is the python library for S3 access
   - `s3.object(bucket_name, object_name)`
 - *Problem*: very hard to filter the object as the data is not organized. Only good for massive data storage
-- *Solution*: MongBD: Managing a collection of documents
+- *Solution*: MongDB - managing a collection of documents
 
-## 1.3. MongoDB
+# 3. MongoDB
 - `JSON format`: to organize data in the plain text, so that any machine can understand the data format
 - **MongoDB**: to manage the collection of these `json` documents and you can query the data. 
   - In practice: MongoDB is used as the data warehouse.   
   - **No Schema**: it can accept any json format, **need to be very careful**.
   - GUI: Robo3T
-- **MongoDB client with Python**: `pymongo`
-  - Query, Aggregrateion pipeline (Group By similar to SQL), Sort 
 <p align="center">
 <img width="500" alt="Screenshot 2022-04-19 at 19 54 32" src="https://user-images.githubusercontent.com/64508435/163997774-d13ca302-257e-46b9-b253-f2ca1f7926fd.png">
 </p>
 
-- **Comparison between RDBMS vs MongoDB**
+## 3.1. Access MongoDB with Python
 <p align="center">
-<img width="500" alt="Screenshot 2022-04-19 at 19 54 32" src="https://user-images.githubusercontent.com/64508435/163998225-e37a6367-aad8-428b-8d4c-3a2978b23624.png">
+<img width="700" alt="Screenshot 2022-04-19 at 19 54 32" src="https://user-images.githubusercontent.com/64508435/164891126-ddf5b0d0-52a3-407b-a3de-4bfd662e9e81.png">
 </p>
 
-- **Command Line Tutorial**:
-  - EmployeeDB: name of the database
-  - Employee: name of the colletion
-  - WriteResult: one document inserted in a collection
+  - Query, Aggregrateion pipeline (similar to SQL - Group By), Sort 
+<p align="center">
+<img width="700" alt="Screenshot 2022-04-19 at 19 54 32" src="https://user-images.githubusercontent.com/64508435/164891197-5e515492-9507-450d-8be7-4f24b7a3aeba.png"><br>
+<img width="700" alt="Screenshot 2022-04-19 at 19 54 32" src="https://user-images.githubusercontent.com/64508435/164891245-11850898-6d09-4fdb-ac77-5a962e3ac04f.png">
+</p>
+
+## 3.2. Comparison between RDBMS vs MongoDB
+<p align="center">
+<img width="600" alt="Screenshot 2022-04-19 at 19 54 32" src="https://user-images.githubusercontent.com/64508435/163998225-e37a6367-aad8-428b-8d4c-3a2978b23624.png">
+</p>
+
+## 3.3. Complex Object Storage in MongoDB
+
+## 3.4. Command Lines:
+- EmployeeDB: name of the database
+- Employee: name of the colletion
+- WriteResult: one document inserted in a collection
 <p align="center">
 <img width="474" alt="Screenshot 2022-04-19 at 19 58 59" src="https://user-images.githubusercontent.com/64508435/163998441-211f445c-0cfa-4436-a154-125141ce0045.png">
 </p>
