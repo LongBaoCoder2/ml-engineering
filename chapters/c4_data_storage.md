@@ -3,145 +3,79 @@
 
 # Table of contents
 - [Table of contents](#table-of-contents)
-- [1. Basics of Git](#1-basics-of-git)
-  - [1.1. Centralized Version Control](#11-centralized-version-control) 
-  - [1.2. Decentralized Cersion Control](#12-decentralized-version-control)
-    - [1.2.1. Basics Git Commands](#121-basics-git-commands)
-  - [1.3. Branches and Commits](#13-branches-and-commits)
-    - [1.3.1. Conflicts in Version Control](#131-conflicts-in-version-control)
-    - [1.3.2. Merge a Branch to the Master]()
-- [2. Storage for Complex ML Data](#2-storage-for-complex-ml-data)
+- [1. Storage for Complex ML Data](#1-storage-for-complex-ml-data)
+  - [1.1. Why Storage matters to ML](#11-why-storage-matters-to-ml)
+  - [1.2. Object Store: Amazon S3](#12-amazon-s3)
+  - [1.3. Document Store: Mongo DB](#13-mongodb)
 - [Resources](#resources)
 
 
-# 1. Basics of Git
-## 1.1. Centralized Version Control
-- **Limitations of Centralized Version Control**:
-  - If the main server goes down, developers can’t save versioned changes
-  - Remote commits are slow
-  - Unsolicited changes might ruin development
-  - If the central database is corrupted, the entire history could be lost (security issues)
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/64508435/163991997-a63f4f8a-0f39-4b0f-8fab-ff6f2dd5623d.png" width="350" />
-</p>
-
-- **Solution**: Decentralized version control
-[(Back to top)](#table-of-contents)
-
-## 1.2. Decentralized Version Control
-- Local repos host all versions
-  - `pull`: get the updates from central server
-  - `push`: send the updated repos to the central server
-- Advantage:
-  - Full history is always available
-  - No need to access a remote server (faster access)
-  - Abibility to push your changes continously 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/64508435/163991479-16f40c48-1d3d-4383-9253-51dec9b2e10f.png" width="350" />
-</p>
-
-[(Back to top)](#table-of-contents)
-
-### 1.2.1. Basics Git Commands
-- `git init`: create a local repo
-- `git remote add origin <link_to_remote_server>`: to link the local repo to the remote repo
-- `git add <name_of_file>`:  to add a file/files to the stage
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/64508435/164873696-03b0923b-4f05-488d-9453-899b37647901.png" width="650" />
-</p>
-
-- `git commit -m "message"`: to push the commit to the local repo
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/64508435/164873754-9219d7eb-e292-485b-80d6-f2563d7eb9f8.png" width="450" />
-</p>
-
-- `git push -u origin master`: to push the updated files from local repo to remote repo
-  - `-u`: to set the upstream as `origin master` 
-- `git pull origin <branch_name>`: to pull the latest update from the current branch in the remote server.
-
-[(Back to top)](#table-of-contents)
-
-## 1.3. Branches and Commits
-### 1.3.1. Conflicts in Version Control
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/64508435/163992391-c1c7f0be-8349-4f29-a8a5-6c4a48abac40.png" width="450" />
-</p>
-
-### 1.3.2. Merge a branch to the master
-- When merging the branch to the master, we need to run a lot of tests. This is very costly.
-- **Best Practise**: Try to minimize number of branches, and try to merge the branches to the master as soon as possible.
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/64508435/164874589-8d5f5ee8-0fd4-4bfb-aba9-edcc1bea64f8.png" width="450" />
-</p>
-
-## 1.4. Pull Request
-- Pull Request: alert to the owner someone wants a change
-<p align="center">
-  <img width="450" alt="Screenshot 2022-04-23 at 11 57 58" src="https://user-images.githubusercontent.com/64508435/164874357-0e3e6dd7-97b7-4a00-9271-71b318bbfaf4.png">
-  <img src="https://user-images.githubusercontent.com/64508435/163994210-70f8cf62-2190-440b-bf34-66533c448cdf.png" width="550" />
-</p>
-
-## 1.5. Fork a repo in GitHub
-- Once you fork a repo
-  - A new repo appears in your account
-  - You have complete control over it
-  - You can clone the project for local edits
-  - Raise a pull request to merge into original repo
-
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/64508435/163994488-b02a1d08-1436-4ba8-b7e1-1f4bc79eb49b.png" width="350" />
-</p>
-
-# 2. Storage for Complex ML Data
-## 2.1. Why Storage matters to ML
+# 1. Storage for Complex ML Data
+## 1.1. Why Storage matters to ML
 - *Data Type* complex and high diversified
   - Different data types (images, video, audio, text)
   - Label complexity: not only 1, 2, 3 but like bounding boxes
 - *High Performance* requirement:
   - Need to pack data in a efficient way 
   - Select & de-select data, based on the training results
-
-- Nature of Data: 
+- *Different Nature of Data*: :rocket:
   - Semi-structured objects
   - Key-value objects (Redis)
   - Object store (Amazon S3). 
-  - Document Store (Mongo DB): formal text like medical report
-  - Elastic Search: text logs from the systems
+  - Document Store 
+    - Mongo DB: Plain text, without fuzzy search
+      - For ex: medical report
+    - Elastic Search: Plain text, search index needed
+      - For ex: text logs from the systems
 
-## 2.2. Amazon S3 - Simple Storage Service
+## 1.2. Amazon S3 
 - It’s originally proposed by AWS, but not almost every cloud provides a copycat
 - Simple Idea: every **object** (binary string) is indexed with 2 strings
   - A bucket name
   - A key name 
-<img width="1035" alt="Screenshot 2022-04-19 at 19 48 41" src="https://user-images.githubusercontent.com/64508435/163996879-b3013dad-2833-411e-b7d0-6e794ce0c2a6.png">
-This image is stored in S3.
-Hireachy: Amazon S3 > Buckets > neuron-server (bucket_name)
-<img width="1035" alt="Screenshot 2022-04-19 at 19 51 31" src="https://user-images.githubusercontent.com/64508435/163997320-1d40da2f-be81-48a4-822e-cbb64a43bc4b.png">
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/64508435/163996879-b3013dad-2833-411e-b7d0-6e794ce0c2a6.png" width="550" />
+</p>
+
+- This `.JPG` image is stored in S3.
+  - Hireachy: Amazon S3 &#8594; Buckets &#8594; neuron-server (bucket_name)
+### 1.2.1. How to access S3 via Python
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/64508435/163997320-1d40da2f-be81-48a4-822e-cbb64a43bc4b.png" width="550" />
+</p>
 
 - Access to S3 is very easy
   - `boto3`: is the python library for S3 access
   - `s3.object(bucket_name, object_name)`
-- Problem: very hard to filter the object as the data is not organized. Only good for massive data storage
-- Solution: MongBD: Managing a collection of documents
+- *Problem*: very hard to filter the object as the data is not organized. Only good for massive data storage
+- *Solution*: MongBD: Managing a collection of documents
 
-## 2.3. MongoDB
+## 1.3. MongoDB
 - `JSON format`: to organize data in the plain text, so that any machine can understand the data format
-- MongoDB: to manage the collection of these `json` documents and you can query the data. 
+- **MongoDB**: to manage the collection of these `json` documents and you can query the data. 
   - In practice: MongoDB is used as the data warehouse.   
   - **No Schema**: it can accept any json format, **need to be very careful**.
   - GUI: Robo3T
-- MongoDB client with Python: `pymongo`
+- **MongoDB client with Python**: `pymongo`
   - Query, Aggregrateion pipeline (Group By similar to SQL), Sort 
-<img width="908" alt="Screenshot 2022-04-19 at 19 54 32" src="https://user-images.githubusercontent.com/64508435/163997774-d13ca302-257e-46b9-b253-f2ca1f7926fd.png">
+<p align="center">
+<img width="500" alt="Screenshot 2022-04-19 at 19 54 32" src="https://user-images.githubusercontent.com/64508435/163997774-d13ca302-257e-46b9-b253-f2ca1f7926fd.png">
+</p>
 
-- Comparison between RDBMS vs MongoDB
-<img width="938" alt="Screenshot 2022-04-19 at 19 57 32" src="https://user-images.githubusercontent.com/64508435/163998225-e37a6367-aad8-428b-8d4c-3a2978b23624.png">
+- **Comparison between RDBMS vs MongoDB**
+<p align="center">
+<img width="500" alt="Screenshot 2022-04-19 at 19 54 32" src="https://user-images.githubusercontent.com/64508435/163998225-e37a6367-aad8-428b-8d4c-3a2978b23624.png">
+</p>
 
-- Command Line Tutorial:
-- EmployeeDB: name of the database
-- Employee: name of the colletion
-- WriteResult: one document inserted in a collection
+- **Command Line Tutorial**:
+  - EmployeeDB: name of the database
+  - Employee: name of the colletion
+  - WriteResult: one document inserted in a collection
+<p align="center">
 <img width="474" alt="Screenshot 2022-04-19 at 19 58 59" src="https://user-images.githubusercontent.com/64508435/163998441-211f445c-0cfa-4436-a154-125141ce0045.png">
+</p>
+  
+[(Back to top)](#table-of-contents)
 
 ### 2.3.1. Storing Complex Objects
 - Convert binary file into a Base64 string
