@@ -90,10 +90,8 @@
   - Convert a character to 8 binary bits
   - Concatenate the bits into a long binary string
 
-<img width="413" alt="Screenshot 2022-04-19 at 20 16 20" src="https://user-images.githubusercontent.com/64508435/164001482-5bac836f-9103-4626-9fca-8f95afc056c2.png">
-
-
 <p align="center">
+  <img width="413" alt="Screenshot 2022-04-19 at 20 16 20" src="https://user-images.githubusercontent.com/64508435/164001482-5bac836f-9103-4626-9fca-8f95afc056c2.png">
   <img src="https://user-images.githubusercontent.com/64508435/164001532-a25ac14b-d5f3-4a46-82d1-5b0b8a59495b.png" width="550" />
   <br>Base64 encoding in Python for storing an image in MongoDB
 </p>
@@ -102,6 +100,7 @@
   <img src="https://user-images.githubusercontent.com/64508435/164001761-c531c951-65b9-4f64-9e49-1a2b450604d9.png" width="550" />
   <br>Base64 decoding in Python 
 </p>
+
 ## 3.4. Command Line Access for MongoDB:
 - EmployeeDB: name of the database
 - Employee: name of the colletion
