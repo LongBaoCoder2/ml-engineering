@@ -77,8 +77,11 @@
   - Fine-grained: define the rules who can control which objects 
 <img width="1083" alt="Screenshot 2022-04-25 at 00 59 13" src="https://user-images.githubusercontent.com/64508435/164987642-b16aa0bf-1b85-4c7b-9168-5fc8aa24c132.png">
 
-- Data Recovery:
-<img width="1083" alt="Screenshot 2022-04-25 at 01 01 07" src="https://user-images.githubusercontent.com/64508435/164987728-ad54bdb9-36ee-4b52-8532-be14dc8b6e4d.png">
+- Data Recovery: Object Versioning allow to restore a file if there is an over-written on that file.
+<img width="1083" alt="Screenshot 2022-04-25 at 01 04 48" src="https://user-images.githubusercontent.com/64508435/164987886-c4072469-64d1-4a80-bc57-0d0f78965617.png">
+
+- Upload Files in the Bucket
+<img width="929" alt="Screenshot 2022-04-25 at 01 07 30" src="https://user-images.githubusercontent.com/64508435/164987977-1446319d-c18b-40d6-ab71-899292d34a80.png">
 
 
 # 3. MongoDB
