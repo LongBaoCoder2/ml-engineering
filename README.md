@@ -5,6 +5,7 @@
 - [1. Machine Learning Design Patterns](./chapters/c1_machine_learning_design_patterns.md)
 - [2. ML Ops  :rocket:](./chapters/c2_ml_ops.md)
 - [3. Git](./chapters/c3_git.md)
+- [4. Data Storage](./chapters/c4_data_storage.md)
 - [Resources](#resources)
 
 
