@@ -76,6 +76,14 @@
 [(Back to top)](#table-of-contents)
 # 2. Git Commands
 ## 2.1 Basics Git Commands
+### 2.1.1. Git Configuration
+- `git --version`: check git version
+- `git config --global user.name "name_of_git_acc"`: Config user name
+- `git config --global user.email "email_of_git_acc"`: Config user email
+- [Secured shell (SSH) Configuration](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+  - [SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh): Using the SSH protocol, you can connect and authenticate to remote servers and services. With SSH keys, you can connect to GitHub without supplying your username and personal access token at each visit.
+  - When you set up SSH, you will need to generate a new SSH key and add it to the ssh-agent. You must add the SSH key to your account on GitHub before you use the key to authenticate.  
+### 2.1.2. Git Repo Startup
 - `git init`: create a local repo
 - `git remote add origin <link_to_remote_server>`: to link the local repo to the remote repo
 - `git add <name_of_file>`:  to add a file/files to the stage
