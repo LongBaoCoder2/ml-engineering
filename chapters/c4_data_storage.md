@@ -107,9 +107,12 @@
 </p>
 
 ## 3.4. Command Line Access for MongoDB:
-- EmployeeDB: name of the database
-- Employee: name of the colletion
-- WriteResult: one document inserted in a collection
+- Start MongoDB Service: `brew services start mongodb-community@5.0`
+- Start MongoDB Service: `brew services stop mongodb-community@5.0`
+- Reading: [Install MongoDB Community Edition on macOS](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/)
+- `EmployeeDB`: name of the database
+- `Employee`: name of the colletion
+- `WriteResult`: one document inserted in a collection
 <p align="center">
 <img width="474" alt="Screenshot 2022-04-19 at 19 58 59" src="https://user-images.githubusercontent.com/64508435/163998441-211f445c-0cfa-4436-a154-125141ce0045.png">
 </p>
