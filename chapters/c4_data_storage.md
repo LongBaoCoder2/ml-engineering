@@ -5,8 +5,9 @@
 - [Table of contents](#table-of-contents)
 - [1. Storage for Complex ML Data](#1-storage-for-complex-ml-data)
   - [1.1. Why Storage matters to ML](#11-why-storage-matters-to-ml)
-- [2. Object Store: Amazon S3](#2-amazon-s3)
+- [2. Object Store: originated from Amazon S3](#2-object-storage)
   - [2.1. Access S3 with Python](#21-access-s3-with-python) 
+  - [2.2. Object Storage on Google Cloud](#22-object-storage-on-google-cloud)
 - [3. Document Store: Mongo DB](#3-mongodb)
   - [3.1. Access MongoDB with Python](#31-access-mongodb-with-python)
   - [3.2. Comparison between RDBMS vs MongoDB](#32-comparison-between-rdbms-vs-mongodb) 
@@ -38,7 +39,7 @@
     - Elastic Search: Plain text, search index needed
       - For ex: text logs (plain text) from the systems
 
-# 2. Amazon S3 
+# 2. Object Storage
 - It’s originally proposed by AWS, but not almost every cloud provides a copycat
 - Simple Idea: every **object** (binary string) is indexed with 2 strings
   - A bucket name
@@ -60,6 +61,25 @@
   - `s3.object(bucket_name, object_name)`
 - *Problem*: very hard to filter the object as the data is not organized. Only good for massive data storage
 - *Solution*: MongDB - managing a collection of documents
+
+## 2.2. Object Storage on Google Cloud
+- Create a new bucket for Object Storage
+<img width="1154" alt="Screenshot 2022-04-25 at 00 55 28" src="https://user-images.githubusercontent.com/64508435/164987514-90814957-9b2d-4c72-a1df-5ec68f71b947.png">
+
+- Choose Bucket Name which is unique.
+<img width="1164" alt="Screenshot 2022-04-25 at 00 56 05" src="https://user-images.githubusercontent.com/64508435/164987534-f50b1066-e293-492c-ba06-466ccbd14e9c.png">
+
+- Choose Location, Region 
+<img width="1083" alt="Screenshot 2022-04-25 at 00 58 20" src="https://user-images.githubusercontent.com/64508435/164987617-f9009963-d13c-4df9-8ee2-5f423c386dd3.png">
+
+- Access Control: 
+  - Uniform: same permission control over every object
+  - Fine-grained: define the rules who can control which objects 
+<img width="1083" alt="Screenshot 2022-04-25 at 00 59 13" src="https://user-images.githubusercontent.com/64508435/164987642-b16aa0bf-1b85-4c7b-9168-5fc8aa24c132.png">
+
+- Data Recovery:
+<img width="1083" alt="Screenshot 2022-04-25 at 01 01 07" src="https://user-images.githubusercontent.com/64508435/164987728-ad54bdb9-36ee-4b52-8532-be14dc8b6e4d.png">
+
 
 # 3. MongoDB
 - `JSON format`: to organize data in the plain text, so that any machine can understand the data format
