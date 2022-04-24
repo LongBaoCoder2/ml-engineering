@@ -108,7 +108,7 @@
 
 ## 3.4. Command Line Access for MongoDB:
 - Start MongoDB Service: `brew services start mongodb-community@5.0`
-- Start MongoDB Service: `brew services stop mongodb-community@5.0`
+- Stop MongoDB Service: `brew services stop mongodb-community@5.0`
 - Reading: [Install MongoDB Community Edition on macOS](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/)
 - `EmployeeDB`: name of the database
 - `Employee`: name of the colletion
