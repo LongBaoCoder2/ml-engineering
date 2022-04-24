@@ -16,6 +16,7 @@
   - [4.1. Index Operation](#41-index-operation) 
   - [4.2. Domain-Specific Language (DSL)](#42-domain-specific-language)
   - [4.3. What makes ElasticSearch different](#43-what-makes-elasticsearch-different)
+  - [4.4. When ElasticSearch ? When MongoDB ?](#44-when-to-use-elasticsearch-or-mongodb)
 - [Resources](#resources)
 
 
@@ -35,7 +36,7 @@
     - Mongo DB: Plain text, without fuzzy search
       - For ex: medical report
     - Elastic Search: Plain text, search index needed
-      - For ex: text logs from the systems
+      - For ex: text logs (plain text) from the systems
 
 # 2. Amazon S3 
 - It’s originally proposed by AWS, but not almost every cloud provides a copycat
@@ -201,14 +202,34 @@
 <img width="600" alt="Screenshot 2022-04-19 at 21 02 51" src="https://user-images.githubusercontent.com/64508435/164010157-99bfed91-d77b-4c41-aaf1-e5bded61ae90.png"><br>Customize an analyzer in ElasticSearch
 </p>
 
-- When Elastic Search? And When MongoDB?
-- Use Elastic Search: search over the documents, log analysis from IoT system.
+## 4.4. When to use ElasticSearch or MongoDB
+- **Use Elastic Search**: search over the documents, log analysis from IoT system.
   - An internal search engine over massive documents
   - Advanced text search involving complex text pre-processing
-- Use MongoDB: dump all the data
+- **Use MongoDB**: dump all the data
   - A general-purpose database for all sorts of data
   - An engine with data retrieval based data id or batches 
   - **High performance** as *object* store in compare with Elastic Search. 
+
+- Example of E-scooter business using `ELK` (three open source projects: Elasticsearch, Logstash, and Kibana):
+  - Multiple sources of logs 
+    - Scooter IoT
+    - Rider app
+    - Operation team
+  - Many analysis involves different logs
+  - Does the operation team move the scooters timely?
+  - *Solution*: ELK (three open source projects: Elasticsearch, Logstash, and Kibana) for log analysis
+<p align="center">
+<img width="600" alt="Screenshot 2022-04-19 at 21 02 51" src="https://user-images.githubusercontent.com/64508435/164983550-49c8aaaf-47e2-47cd-a102-ebd1c1b70a64.png">
+</p> 
+
+- Concern: hardly control the format of the logs
+  - Many are developed by third-party
+  - Different time/data format
+- `Logstash` helps to quickly digest massive logs from multiple sources 
+  - Define filters and transformation over the original logs
+- `Elastic` provides the search engine over the logs 
+- `Kibana` visualizes the data based on user’s query
 
 # Resources
 
