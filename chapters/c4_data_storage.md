@@ -11,7 +11,7 @@
   - [3.1. Access MongoDB with Python](#31-access-mongodb-with-python)
   - [3.2. Comparison between RDBMS vs MongoDB](#32-comparison-between-rdbms-vs-mongodb) 
   - [3.3. Complex Object Storage in MongoDB](#33-complex-object-storage-in-mongodb)
-  - [3.4. Command Lines](#34-command-lines)
+  - [3.4. Command Line Access for MongoDB](#34-command-line-access-for-mongodb)
 - [Resources](#resources)
 
 
@@ -83,25 +83,12 @@
 </p>
 
 ## 3.3. Complex Object Storage in MongoDB
-
-## 3.4. Command Lines:
-- EmployeeDB: name of the database
-- Employee: name of the colletion
-- WriteResult: one document inserted in a collection
-<p align="center">
-<img width="474" alt="Screenshot 2022-04-19 at 19 58 59" src="https://user-images.githubusercontent.com/64508435/163998441-211f445c-0cfa-4436-a154-125141ce0045.png">
-</p>
-  
-[(Back to top)](#table-of-contents)
-
-### 2.3.1. Storing Complex Objects
 - Convert binary file into a Base64 string
   - Split the binary string into a sequence of 8-bit number
   - Convert every 8-bit number to a character according to the Base64 Encoding Table
 - Reverse conversion
   - Convert a character to 8 binary bits
   - Concatenate the bits into a long binary string
-
 
 <img width="413" alt="Screenshot 2022-04-19 at 20 16 20" src="https://user-images.githubusercontent.com/64508435/164001482-5bac836f-9103-4626-9fca-8f95afc056c2.png">
 
@@ -115,6 +102,18 @@
   <img src="https://user-images.githubusercontent.com/64508435/164001761-c531c951-65b9-4f64-9e49-1a2b450604d9.png" width="550" />
   <br>Base64 decoding in Python 
 </p>
+## 3.4. Command Line Access for MongoDB:
+- EmployeeDB: name of the database
+- Employee: name of the colletion
+- WriteResult: one document inserted in a collection
+<p align="center">
+<img width="474" alt="Screenshot 2022-04-19 at 19 58 59" src="https://user-images.githubusercontent.com/64508435/163998441-211f445c-0cfa-4436-a154-125141ce0045.png">
+</p>
+  
+[(Back to top)](#table-of-contents)
+
+
+
 
 ## 2.4. ElasticSearch
 - ElasticSearch behaves like a search engine
