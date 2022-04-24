@@ -12,6 +12,10 @@
   - [3.2. Comparison between RDBMS vs MongoDB](#32-comparison-between-rdbms-vs-mongodb) 
   - [3.3. Complex Object Storage in MongoDB](#33-complex-object-storage-in-mongodb)
   - [3.4. Command Line Access for MongoDB](#34-command-line-access-for-mongodb)
+- [4. Document Store: ElasticSearch](#4-elasticsearch)
+  - [4.1. Index Operation](#41-index-operation) 
+  - [4.2. Domain-Specific Language (DSL)](#42-domain-specific-language)
+  - [4.3. What makes ElasticSearch different](#43-what-makes-elasticsearch-different)
 - [Resources](#resources)
 
 
@@ -112,76 +116,90 @@
 [(Back to top)](#table-of-contents)
 
 
-
-
-## 2.4. ElasticSearch
+# 4. ElasticSearch
 - ElasticSearch behaves like a search engine
   - The adoption of RESTful interface
   - Its very unique score function over **text search queries**
   - Powerful query language over text data
   - Strong consistency guarantee
 - The demand of text search is more complicated
-<img width="1126" alt="Screenshot 2022-04-19 at 20 43 11" src="https://user-images.githubusercontent.com/64508435/164006572-c6ac4bfd-8c35-4dd9-9cc3-5fbe13fcc82c.png">
+<p align="center">
+<img width="500" alt="Screenshot 2022-04-19 at 20 43 11" src="https://user-images.githubusercontent.com/64508435/164006572-c6ac4bfd-8c35-4dd9-9cc3-5fbe13fcc82c.png">
+</p>
 
 - ElasticSearch organizes documents in a **hierarchy** and provide search functions
+<p align="center">
+<img width="450" alt="Screenshot 2022-04-19 at 20 43 49" src="https://user-images.githubusercontent.com/64508435/164006882-59da250c-fd2e-4ef9-8bfc-503a2cf2d486.png">
+</p>
 
-<img width="618" alt="Screenshot 2022-04-19 at 20 43 49" src="https://user-images.githubusercontent.com/64508435/164006882-59da250c-fd2e-4ef9-8bfc-503a2cf2d486.png">
-
+## 4.1. Index Operation
 - No need the command-line, but via Browser, you can connect to ElasticSearch database
-- For example: create `hardwarezone` database on ElasticSearch
-  <img width="986" alt="Screenshot 2022-04-19 at 20 44 42" src="https://user-images.githubusercontent.com/64508435/164007027-77a70c7b-9e6b-4157-9645-be57b85aad5c.png">
-  
-- Use RESTFUL API to insert data into the database via POST method.
+  - For example: create `hardwarezone` database on ElasticSearch
+<p align="center">
+<img width="500" alt="Screenshot 2022-04-19 at 20 44 42" src="https://user-images.githubusercontent.com/64508435/164007027-77a70c7b-9e6b-4157-9645-be57b85aad5c.png">
+</p>
+
+- **Insert & Retrieve**: Use RESTFUL API to insert data into the database via POST method.
   - `201`: operation is successsfully applied. 
-  - Insert a document without an ID 
-<img width="1052" alt="Screenshot 2022-04-19 at 20 45 36" src="https://user-images.githubusercontent.com/64508435/164007166-4e681580-b860-49e6-912c-d1e7e0489bc0.png">
+<p align="center">
+<img width="600" alt="Screenshot 2022-04-19 at 20 45 36" src="https://user-images.githubusercontent.com/64508435/164007166-4e681580-b860-49e6-912c-d1e7e0489bc0.png"><br>Insert a document with-out an ID<br>
+<img width="600" alt="Screenshot 2022-04-19 at 20 48 02" src="https://user-images.githubusercontent.com/64508435/164007533-2f332ad8-a0a8-4edb-9f5e-89dbd252f344.png"><br>Insert & Delete a document with an ID<br>
+<img width="600" alt="Screenshot 2022-04-19 at 20 51 29" src="https://user-images.githubusercontent.com/64508435/164008122-9b311e61-e45d-4be7-a544-39fbaf4eaff9.png"><br> Retrieve a document based on ID<br>
+</p>
 
-  - Insert a document with an ID
-<img width="787" alt="Screenshot 2022-04-19 at 20 48 02" src="https://user-images.githubusercontent.com/64508435/164007533-2f332ad8-a0a8-4edb-9f5e-89dbd252f344.png">
-  
-  - Retrieve a document based on ID
-<img width="787" alt="Screenshot 2022-04-19 at 20 51 29" src="https://user-images.githubusercontent.com/64508435/164008122-9b311e61-e45d-4be7-a544-39fbaf4eaff9.png">
+- **Search operations**: Simple Lucene-style search
+<p align="center"><img width="400" alt="Screenshot 2022-04-19 at 20 52 35" src="https://user-images.githubusercontent.com/64508435/164008338-81a8550b-b0c7-4e92-99a2-22ad1f364844.png"><br>
+<img width="400" alt="Screenshot 2022-04-19 at 20 55 10" src="https://user-images.githubusercontent.com/64508435/164008775-95009fdd-79f7-4895-bdb8-58d6729f023b.png">
+</p>
 
-- Simple search operations: Simple Lucene-style search
-- <img width="679" alt="Screenshot 2022-04-19 at 20 52 35" src="https://user-images.githubusercontent.com/64508435/164008338-81a8550b-b0c7-4e92-99a2-22ad1f364844.png">
-<img width="476" alt="Screenshot 2022-04-19 at 20 55 10" src="https://user-images.githubusercontent.com/64508435/164008775-95009fdd-79f7-4895-bdb8-58d6729f023b.png">
-#### Domain-Specific Language (DSL)
+
+## 4.2. Domain-Specific Language 
 -  Query in a tree structure
--  The first part query context is involved in the score function
-- The second part filter context includes filtering conditions
-- "must" condition: must have 
-- "filter" condition: add some scores, if a good match, the score will be high.
-- Boolean query combines 
-  - Must query
-  - Filter query
-  - Should query
-  - Must_not query
+- *First part*: **query context** is involved in the score function (`must` condition: must have)
+- *Second part*: **filter context** includes filtering conditions (`filter` condition: add some scores, if a good match, the score will be high)
+<p align="center"><img width="600" alt="Screenshot 2022-04-19 at 20 52 35" src="https://user-images.githubusercontent.com/64508435/164980899-b9d76849-1c33-4722-915a-bf7a56c8c281.png">
+</p>
 
-<img width="385" alt="Screenshot 2022-04-19 at 20 57 35" src="https://user-images.githubusercontent.com/64508435/164009180-26a5bf97-e383-4481-9491-7fa3ea8e63a1.png">
+- Boolean query combines 
+  - `must` query
+  - `filter` query
+  - `must_not` query
+  - `should` query
+<p align="center">
+<img width="450" alt="Screenshot 2022-04-19 at 20 57 35" src="https://user-images.githubusercontent.com/64508435/164009180-26a5bf97-e383-4481-9491-7fa3ea8e63a1.png">
+</p>
 
 - Boosting query combines 
-  - Positive query
-  - Negative query
-#### what makes ElasticSearch different
+  - `positive` query
+  - `negative` query
+<p align="center">
+<img width="450" alt="Screenshot 2022-04-19 at 20 57 35" src="https://user-images.githubusercontent.com/64508435/164981279-762ee500-3897-4ef7-9a80-023d31905491.png">
+</p>
 
-<img width="734" alt="Screenshot 2022-04-19 at 21 00 14" src="https://user-images.githubusercontent.com/64508435/164009708-a6f6ec9a-5b16-4b97-a5dd-0a8bb0c75744.png">
-- Chracter Filter in Analyzer: Elastic Search can ignore the 
+## 4.3. What makes ElasticSearch different
+<p align="center">
+<img width="500" alt="Screenshot 2022-04-19 at 21 00 14" src="https://user-images.githubusercontent.com/64508435/164009708-a6f6ec9a-5b16-4b97-a5dd-0a8bb0c75744.png"></p>
 
-<img width="548" alt="Screenshot 2022-04-19 at 21 01 18" src="https://user-images.githubusercontent.com/64508435/164009906-aae86f34-701e-4808-bb43-ff4e7a705a86.png">
+- **Chracter Filter in Analyzer**:
+  - Replacement over character level
+    - Convert Hindu-Arabic numbers to Arabic-Latin letters
+    - Strip HTML elements
+      - For example: `html_strip` a character filter to remove any HTML character texts.
+  - Every analyzer can have zero or more character filters
+<p align="center">
+<img width="548" alt="Screenshot 2022-04-19 at 21 01 18" src="https://user-images.githubusercontent.com/64508435/164009906-aae86f34-701e-4808-bb43-ff4e7a705a86.png"></p>
 
-- Tokenizer in Analyzer
+- **Tokenizer in Analyzer**:
   - Break sentence into tokens
-  - Every analyzer has exactly one tokenizer
-  - Stem
-
+  - Every analyzer has exactly one `tokenizer`
   - Transformation over the tokens 
     - Convert to lower-case
     - Stemming
     - Synonyms
-
-- html_strip: a character filter to remove any HTML character texts.
-<img width="977" alt="Screenshot 2022-04-19 at 21 02 51" src="https://user-images.githubusercontent.com/64508435/164010157-99bfed91-d77b-4c41-aaf1-e5bded61ae90.png">
-
+  - Every analyzer can have zero or more `token filters`
+<p align="center">
+<img width="600" alt="Screenshot 2022-04-19 at 21 02 51" src="https://user-images.githubusercontent.com/64508435/164010157-99bfed91-d77b-4c41-aaf1-e5bded61ae90.png"><br>Customize an analyzer in ElasticSearch
+</p>
 
 - When Elastic Search? And When MongoDB?
 - Use Elastic Search: search over the documents, log analysis from IoT system.
