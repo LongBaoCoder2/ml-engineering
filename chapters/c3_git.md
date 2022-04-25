@@ -10,7 +10,7 @@
     - [1.3.2. Merge a Branch to the Master](#132-merge-a-branch-to-the-master)
 - [2. Git Commands](#2-git-commands)
   - [2.1. Basics Git Commands](#21-basics-git-commands)
-    - []()
+    - [2.1.1. Git Configuration](#211-git-configuration)
     - [2.1.2. Git Repo Startup](212-git-repo-startup)
     - [2.1.3. Git Reset](#213-git-reset) 
 - [Resources](#resources)
