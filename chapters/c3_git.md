@@ -10,6 +10,9 @@
     - [1.3.2. Merge a Branch to the Master](#132-merge-a-branch-to-the-master)
 - [2. Git Commands](#2-git-commands)
   - [2.1. Basics Git Commands](#21-basics-git-commands)
+    - []()
+    - [2.1.2. Git Repo Startup](212-git-repo-startup)
+    - [2.1.3. Git Reset](#213-git-reset) 
 - [Resources](#resources)
 
 
@@ -100,6 +103,10 @@
   - `-u`: to set the upstream as `origin master` 
 - `git pull origin <branch_name>`: to pull the latest update from the current branch in the remote server.
 
+### 2.1.3. Git Reset
+- **Unstage commits on Git**: use the “git reset” command with the “–soft” option and specify the commit hash.
+  - `git reset --soft <commit>`
+  - `git reset --soft HEAD~1` unstage your last commit, you can the “HEAD” notation in order to revert it easily
 [(Back to top)](#table-of-contents)
 
 # Resources
