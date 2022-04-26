@@ -53,8 +53,14 @@
 </p>
 
 - After labelling 500 images, I came up with the second version
-- Invalid photo
-                                                                                                                               Good parking - Bad parking - ~~Toppled~~                                                                                                                              
+  - Invalid photo
+  - Good parking 
+  - Bad parking 
+  - ~~Toppled~~
+
+
+                                                                                                                               
+                                                                                                                               
 
 
 [(Back to top)](#table-of-contents)
