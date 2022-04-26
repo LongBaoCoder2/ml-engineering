@@ -76,16 +76,26 @@
   - Dump the objects for annotation into a bucket
   - Build a CSV file (resp. json file) containing links to the objects on Google Cloud (resp. AWS)
 <p align="center">
-<img width="600" alt="Screenshot 2022-04-26 at 19 44 58" src="https://user-images.githubusercontent.com/64508435/165293087-d880a2db-aecf-4701-82ab-d3b5173917f2.png"></p>
+<img width="300" alt="Screenshot 2022-04-26 at 19 44 58" src="https://user-images.githubusercontent.com/64508435/165293087-d880a2db-aecf-4701-82ab-d3b5173917f2.png"></p>
                                                                                                                                
 - Step 2: Config the data set: image, audio
 - Step 3: Create a labelling task
 - Step 4: Manage the team 
   - Inivte annotator into the team   
   - Annotation team management is a big challenge 
-    - Quality: The accuracy of the labels decide the accuracy of the model
-    - Efficiency: The annotation speed decides how much training is available after a period of time                                                                                                            
-                                                                                                                               
+    - `Quality`: The accuracy of the labels decide the accuracy of the model
+    - `Efficiency`: The annotation speed decides how much training is available after a period of time                                                                                                            
+ ## 1.4.Data Annotation Evaluation
+- **Consistency rate**: Percentage of identical labels from at least two annotators
+  - Consistency rate drops when the same annotators run on the same job for a few weeks
+- For training data, we will use the data that being labeled and agreed by at least 2 annotators.
+<p align="center">
+<img width="800" alt="Screenshot 2022-04-26 at 19 44 58" src="https://user-images.githubusercontent.com/64508435/165294384-49fa995a-c364-4aee-93a3-bcb496f35fc6.png"></p>
 
-
+- The problem of **concept understanding drift**
+  - New annotators are not familiar with the rules
+  - After a weekend, annotators forget the rules
+  - The distribution of the data affects the priori (prior knowledge) of the annotators.
+    - For example: the training samples come from batches everyday, and there will be a different between the weekday, weekend and public holidays.
+  
 [(Back to top)](#table-of-contents)
