@@ -13,6 +13,7 @@
   - [2.1. Missing Values](#21-missing-values) 
   - [2.2. Data Validity vs Data Accuracy](#22-data-validity-vs-data-dccuracy)
   - [2.3. Data Privacy](#23-data-privacy)
+- [3. Data Verification](#3-data-verification)
 
 # 1. Data Annotation
 ## 1.1. Examples of Label Design
@@ -162,6 +163,43 @@
 <img width="600" alt="Screenshot 2022-04-26 at 20 23 22" src="https://user-images.githubusercontent.com/64508435/165299524-318274ca-391a-4d17-b4a5-92e0e245627f.png"></p>
 
 # 3. Data Verification
+- Why do we need data verification ?
+  - The **distribution of the real workload** might be **different** from your training data set
+  - When changes happen, need to alert the algorithm team.
+- Where does the change come from? 
+  - Change of user behavior
+  - Change of data collection method
+  - Change of the environment or external factors
+## 3.1. Consequence of data distribution change
+- **Macro-level consequence**
+  - Let’s say a model achieves "good parking detection" with 95% recall and 92%
+  precision. Assume 20% is good parking
+  - The # of complaints from riders per 1,000 trips is 10
+    - When the good parking rate grows to 50%
+  - The # of complaints from riders per 1,000 trip will be 25
+<p align="center">
+<img width="600" alt="Screenshot 2022-04-26 at 20 23 22" src="https://user-images.githubusercontent.com/64508435/165303080-ca46a250-d3c3-4eb7-9b34-90a740cb54c2.png"></p>
+
+- Original Boundary: Red Line
+- Data change to upper right (green points) &#8594;  put the green points into the training data as well.
+
+## 3.2. Find the distribution change
+- `Categorical data`: Keep track of the distribution over the values
+<p align="center">
+<img width="500" alt="Screenshot 2022-04-26 at 20 50 47" src="https://user-images.githubusercontent.com/64508435/165303698-dd2570c3-1a66-4019-82c2-24d7a8bf288f.png"></p>
+
+- `Numerical values`:
+  - Keep track of the mean and variance over the columns
+  - Plot Histogram
+  - Scatter Plot (to see the joint-distribution in 2 different dimension, which is unable to do in Histogram)
+    - On the right scatter plot: negatively correlated to each other
+<p align="center">
+<img width="500" alt="Screenshot 2022-04-26 at 20 50 47" src="https://user-images.githubusercontent.com/64508435/165303901-8c532a6a-600a-4d7f-866f-e95cd398c693.png"></p>
+
+## 3.3. Data Validation Pipeline
+- Enable automatic model update based on data validation
+<p align="center">
+<img width="536" alt="Screenshot 2022-04-26 at 20 56 16" src="https://user-images.githubusercontent.com/64508435/165304733-d4c9513d-5b19-41f1-b7a7-e5aa28451155.png"></p>
 
 
 [(Back to top)](#table-of-contents)
