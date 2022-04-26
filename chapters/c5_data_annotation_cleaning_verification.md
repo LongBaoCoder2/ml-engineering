@@ -7,6 +7,7 @@
   - [1.1. Examples of Label Design](#11-examples-of-label-design) 
   - [1.2. General principles of label design](#12-general-principles-of-label-design)  
   - [1.3. Data Annotation Tool](#13-data-annotation-tool)
+  - [1.4. Data Annotation Evaluation](#14-data-annotation-evaluation)
 
 # 1. Data Annotation
 ## 1.1. Examples of Label Design
@@ -85,7 +86,7 @@
   - Annotation team management is a big challenge 
     - `Quality`: The accuracy of the labels decide the accuracy of the model
     - `Efficiency`: The annotation speed decides how much training is available after a period of time                                                                                                            
- ## 1.4.Data Annotation Evaluation
+ ## 1.4. Data Annotation Evaluation
 - **Consistency rate**: Percentage of identical labels from at least two annotators
   - Consistency rate drops when the same annotators run on the same job for a few weeks
 - For training data, we will use the data that being labeled and agreed by at least 2 annotators.
