@@ -6,6 +6,7 @@
 - [1. Data Annotation](#1-data-annotation)
   - [1.1. Examples of Label Design](#11-examples-of-label-design) 
   - [1.2. General principles of label design](#12-general-principles-of-label-design)  
+  - [1.3. Data Annotation Tool](#13-data-annotation-tool)
 
 # 1. Data Annotation
 ## 1.1. Examples of Label Design
@@ -40,6 +41,7 @@
   - Pass the instructions to annotation teams to start the real work of annotation on training and test sets.
 
 ### 1.2.1. Example of Label Design
+- Context: Scooter parking audit
 - The task is to recognize if the scooter is parking appropriately
 - The business value
   - Educate riders on good parking
@@ -49,17 +51,40 @@
   - Bad parking
   - Toppled: if the scooter is toppled, the team will send the operation team to remove that. 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/64508435/165290438-2f8cd1c9-d562-4278-b726-33ea9fd5d8e7.png"" width="600" />
+  <img src="https://user-images.githubusercontent.com/64508435/165290438-2f8cd1c9-d562-4278-b726-33ea9fd5d8e7.png" width="600" />
 </p>
 
 - After labelling 500 images, I came up with the second version
   - Invalid photo
-  - Good parking 
-  - Bad parking 
+  - Good parking
+  - Bad parking
   - ~~Toppled~~
+- Re-labelling 500 images, we had the third version 
+  - Invalid photo
+  - Good parking
+  - Against the wall
+  - Blocking access
 
+## 1.3. Data Annotation Tool
+- **Data sets**: objects for data annotation
+- **Label sets**: labels/dictionary for annotation
+- **Instructions**: connection between dataset and label sets examples on how to do the annotation
+<p align="center">
+<img width="600" alt="Screenshot 2022-04-26 at 19 44 58" src="https://user-images.githubusercontent.com/64508435/165292909-e88bac03-69ff-4d21-bf6e-2ba3ab00d487.png"></p>
 
+- Step 1: Create a data set
+  - Dump the objects for annotation into a bucket
+  - Build a CSV file (resp. json file) containing links to the objects on Google Cloud (resp. AWS)
+<p align="center">
+<img width="600" alt="Screenshot 2022-04-26 at 19 44 58" src="https://user-images.githubusercontent.com/64508435/165293087-d880a2db-aecf-4701-82ab-d3b5173917f2.png"></p>
                                                                                                                                
+- Step 2: Config the data set: image, audio
+- Step 3: Create a labelling task
+- Step 4: Manage the team 
+  - Inivte annotator into the team   
+  - Annotation team management is a big challenge 
+    - Quality: The accuracy of the labels decide the accuracy of the model
+    - Efficiency: The annotation speed decides how much training is available after a period of time                                                                                                            
                                                                                                                                
 
 
