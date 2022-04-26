@@ -3,7 +3,7 @@
 
 # Table of contents
 - [Table of contents](#table-of-contents)
-- [1. Data Annotation](#1-data-anotation)
+- [1. Data Annotation](#1-data-annotation)
   - [1.1. Examples of Label Design](#11-examples-of-label-design) 
   - [1.2. General principles of label design](#12-general-principles-of-label-design)  
 
@@ -33,5 +33,10 @@
   - The **semantic meaning** of the label is easy to understand 
   - The **number of samples for each label** is sufficiently large
     - If there’s a label with very few samples: Give it up!
- 
+- The process of label design:
+  - Design the label structure
+  - Annotate by yourself
+  - Review and revise the label structure
+
+
 [(Back to top)](#table-of-contents)
