@@ -56,13 +56,8 @@
   - Invalid photo
   - Good parking 
   - Bad parking 
-  - ~~Toppled~
-                                                                                                                              
+  - ~~Toppled~~
                                                                                                                                
-                                                                                                                               
-                                                                                                                             
-                                                                                                                             
-                                                                                                       ~                                                                                                                              
 
 
 [(Back to top)](#table-of-contents)
