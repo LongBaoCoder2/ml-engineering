@@ -29,8 +29,9 @@
     - Ask annotation team to mark if audio is strongly emotional or not.
 ## 1.2. General principles of label design
 - General principles of label design/review
-  - The sample with the identical labels are similar to each
-  - The semantic meaning of the label is easy to understand 
-  - The number of samples for each label is sufficiently large
-
+  - The sample with the **identical** labels are similar to each
+  - The **semantic meaning** of the label is easy to understand 
+  - The **number of samples for each label** is sufficiently large
+    - If there’s a label with very few samples: Give it up!
+ 
 [(Back to top)](#table-of-contents)
