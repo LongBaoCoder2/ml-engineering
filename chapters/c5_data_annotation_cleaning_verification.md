@@ -111,6 +111,22 @@
   - Run an exam for your annotators every day before they start their daily work
 
 # 2. Data Cleaning
+- When do we need data cleaning?
+  - Multi-dimensional data is more error-prone
+- There are always errors in the data
+  - Source problem: data crawler may miss some fields
+  - ETL problem: there are bugs in processing some special cases
 
-
+## 2.1. Missing Values
+- Method 1: Remove the rows with missing values
+- Method 2: Fill in the value
+  - Mean value strategy
+    - Pro: simple yet effective in most cases
+    - Con: slightly affect the ML performance
+  - NULL value strategy
+    - Pro: NULL contains additional information in some cases
+    - Con: your model is expected to handle NULL value
+  - Other strategy based on domain knowledge: A prediction model could be used
+    - Pro: If the knowledge/model is correct, it’s highly effective 
+    - Con: How to verify the knowledge/model?
 [(Back to top)](#table-of-contents)
