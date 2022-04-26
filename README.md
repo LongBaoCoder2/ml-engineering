@@ -6,6 +6,7 @@
 - [2. ML Ops  :rocket:](./chapters/c2_ml_ops.md)
 - [3. Git](./chapters/c3_git.md)
 - [4. Data Storage](./chapters/c4_data_storage.md)
+- [5. Data Annotation, Cleaning and Verification](./chapters/c5_data_annotation_cleaning_verification.md)
 - [Resources](#resources)
 
 
