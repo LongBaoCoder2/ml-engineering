@@ -10,6 +10,9 @@
   - [1.4. Data Annotation Evaluation](#14-data-annotation-evaluation)
   - [1.5. Quality control over the annotations](#15-quality-control-over-the-annotations)
 - [2. Data Cleaning](#2-data-cleaning)
+  - [2.1. Missing Values](#21-missing-values) 
+  - [2.2. Data Validity vs Data Accuracy](#22-data-validity-vs-data-dccuracy)
+  - [2.3. Data Privacy](#23-data-privacy)
 
 # 1. Data Annotation
 ## 1.1. Examples of Label Design
@@ -151,13 +154,14 @@
 - **Cross-field** validation: Build a formula across fields to validation
   - BMI = Weight / square of Height in meter
 
-### 2.2.1. Data Privacy
+## 2.3. Data Privacy
 - Find and remove personal identity information (PII)
 - Does **General Data Protection Regulation** `GDPR` ban Machine Learning?
   - The short answer is “no”, But you need to prepare a lot of paperwork with the lawyers
 <p align="center">
 <img width="600" alt="Screenshot 2022-04-26 at 20 23 22" src="https://user-images.githubusercontent.com/64508435/165299524-318274ca-391a-4d17-b4a5-92e0e245627f.png"></p>
 
+# 3. Data Verification
 
 
 [(Back to top)](#table-of-contents)
