@@ -8,6 +8,8 @@
   - [1.2. General principles of label design](#12-general-principles-of-label-design)  
   - [1.3. Data Annotation Tool](#13-data-annotation-tool)
   - [1.4. Data Annotation Evaluation](#14-data-annotation-evaluation)
+  - [1.5. Quality control over the annotations](#15-quality-control-over-the-annotations)
+- [2. Data Cleaning](#2-data-cleaning)
 
 # 1. Data Annotation
 ## 1.1. Examples of Label Design
@@ -87,7 +89,7 @@
     - `Quality`: The accuracy of the labels decide the accuracy of the model
     - `Efficiency`: The annotation speed decides how much training is available after a period of time                                                                                                            
  ## 1.4. Data Annotation Evaluation
-- **Consistency rate**: Percentage of identical labels from at least two annotators
+- **Consistency Rate**: Percentage of identical labels from at least two annotators
   - Consistency rate drops when the same annotators run on the same job for a few weeks
 - For training data, we will use the data that being labeled and agreed by at least 2 annotators.
 <p align="center">
@@ -98,5 +100,17 @@
   - After a weekend, annotators forget the rules
   - The distribution of the data affects the priori (prior knowledge) of the annotators.
     - For example: the training samples come from batches everyday, and there will be a different between the weekday, weekend and public holidays.
-  
+ 
+## 1.5. Quality control over the annotations
+- Write your instructions in a better way
+  - Clear descriptions and samples over all possible cases
+  - You need to go through them by yourself
+  - Don’t expect your annotators help you find the corner/boundary cases
+- Methods for **daily quality control**
+  - Sample and check the labels every day by yourself (**Consistency Rate**)
+  - Run an exam for your annotators every day before they start their daily work
+
+# 2. Data Cleaning
+
+
 [(Back to top)](#table-of-contents)
