@@ -129,4 +129,35 @@
   - Other strategy based on domain knowledge: A prediction model could be used
     - Pro: If the knowledge/model is correct, it’s highly effective 
     - Con: How to verify the knowledge/model?
+
+## 2.2. Data Validity vs Data Accuracy
+<p align="center">
+<img width="400" alt="Screenshot 2022-04-26 at 19 44 58" src="https://user-images.githubusercontent.com/64508435/165298323-6ebd849c-261d-4344-93cc-cfdaa5171901.png"></p>
+
+### 2.2.1. Data Validity
+- **Data type** constraints 
+  - For example:  Age column contains integer only
+  - Method: Type checking, Regular expression 
+- **Range type** constraints
+  - Age column contains numbers no larger than 150
+  - Temperate is usually no larger than 50 degree Celsius
+  - The speed of a bus is no larger than 300 km/h
+- **Unique type** constraints
+  - For example: Passport Number, Image ID, Name of a person
+- **Foreign key** constraints: If the field refers to another table, make sure the keys are valid
+<p align="center">
+<img width="600" alt="Screenshot 2022-04-26 at 20 23 22" src="https://user-images.githubusercontent.com/64508435/165299076-c438508d-a768-44a8-8880-de68b0f70f4b.png"></p>
+
+- **Cross-field** validation: Build a formula across fields to validation
+  - BMI = Weight / square of Height in meter
+
+### 2.2.1. Data Privacy
+- Find and remove personal identity information (PII)
+- Does **General Data Protection Regulation** `GDPR` ban Machine Learning?
+  - The short answer is “no”, But you need to prepare a lot of paperwork with the lawyers
+<p align="center">
+<img width="600" alt="Screenshot 2022-04-26 at 20 23 22" src="https://user-images.githubusercontent.com/64508435/165299524-318274ca-391a-4d17-b4a5-92e0e245627f.png"></p>
+
+
+
 [(Back to top)](#table-of-contents)
