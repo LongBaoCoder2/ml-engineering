@@ -46,6 +46,11 @@
 <img width="550" alt="Screenshot 2022-05-10 at 19 18 19" src="https://user-images.githubusercontent.com/64508435/167616877-dae2248e-e7d2-4fb4-b557-1ee947203d2a.png">
 ## Docker 101
 - `Image` a read-only template with instructions for creating a Docker container. (like a recipe)
+- `Dockerfile` is a simple text file that contains a list of commands that the Docker client calls while creating an image
+  - Start from a base image, say can start from Python3.8 base image `FROM python:3.8`
+  - `CMD ["python", "./app.py"]`: if we run this containers, the `app.py` will be run.
+  -  <img width="536" alt="Screenshot 2022-05-10 at 19 27 43" src="https://user-images.githubusercontent.com/64508435/167618319-97d9adbe-ecb7-48dc-915b-33391e0360c8.png">
+
 - `Container` A container is a runnable instance of an image (a cake made by the recipe)
   - You can create, start, stop, move, or delete a container using the Docker API or CLI. 
   - You can connect a container to one or more networks, attach storage to it, or even create a new image based on its current state.
@@ -55,4 +60,10 @@
 as Kitematic which provide a GUI to the users.
 - `Docker Registries` (repositories) - A registry of Docker images. You can think of the registry as a directory of all available Docker images. If required, one can host their own Docker registries and can use them for pulling images.
   - Google Cloud, Azure provides their own repositories (container registries)
+
+## Commonly use Docker Commands
+- docker pull: down images from remote repo to the local repo
+- docker push: push the images from local repo to remote repo
+<img width="890" alt="Screenshot 2022-05-10 at 19 25 19" src="https://user-images.githubusercontent.com/64508435/167617941-43f34df4-1149-4bbd-b8e6-504b45923a71.png">
+
 [(Back to top)](#table-of-contents)
