@@ -44,6 +44,7 @@
 - Docker is a Linux-based, open-source containerization **platform** that developers use to build, run, and package applications for deployment using containers
   -  provide utilies to build & run the containers
 <img width="550" alt="Screenshot 2022-05-10 at 19 18 19" src="https://user-images.githubusercontent.com/64508435/167616877-dae2248e-e7d2-4fb4-b557-1ee947203d2a.png">
+
 ## Docker 101
 - `Image` a read-only template with instructions for creating a Docker container. (like a recipe)
 - `Dockerfile` is a simple text file that contains a list of commands that the Docker client calls while creating an image
