@@ -31,4 +31,8 @@
 ![image](https://user-images.githubusercontent.com/64508435/170171448-594ab2ba-23bd-4c89-9f49-e388ce425919.png)
 ![image](https://user-images.githubusercontent.com/64508435/170171485-952de8dd-8974-4405-8ae8-b4b1edf2a465.png)
 
+- Once model version is created > Click the model name > Test the model version via 'TEST & USE`
+
+![image](https://user-images.githubusercontent.com/64508435/170174278-25c39a09-7fc3-42b9-ad68-ca6b4e944c93.png)
+![image](https://user-images.githubusercontent.com/64508435/170174443-89eaac80-1043-47c9-9d0d-92aa3a3c0bd2.png)
 
