@@ -1,0 +1,2 @@
+- - [How to implement CI/CD for your Vertex AI Machine Learning Pipeline](https://medium.com/google-cloud/how-to-implement-ci-cd-for-your-vertex-ai-pipeline-27963bead8bd)
+- [Deploy an end-to-end Tensorflow Pipeline on Kubeflow](https://blog.searce.com/deploy-an-end-to-end-tensorflow-pipeline-on-kubeflow-688f769a4698)
