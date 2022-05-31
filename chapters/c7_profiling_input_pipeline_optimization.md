@@ -6,3 +6,4 @@
 
 This diagram shows that a training step includes opening a file, fetching a data entry from the file and then using the data for training. We can see clear inefficiencies here as when our model is training, the input pipeline is idle and when the input pipeline is fetching the data, our model is idle.
 - Prefetching
+  -There is an argument that prefetch transformation requires — the number of elements to prefetch. However, we could simply make use of   `tf.data.AUTOTUNE` — provided by tensorflow, which prompts tf.data runtime to tune the value dynamically at runtime.
