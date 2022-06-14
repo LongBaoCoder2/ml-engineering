@@ -1,0 +1,5 @@
+- Meta Data:
+- Kubeflow: also provide Meta checking but a wrapper on Meta Data management on top of TFX
+  - run top of of Kubernetes system
+  - need to have kubernestest cluster 
+  - open-source, so it can run anywhere
