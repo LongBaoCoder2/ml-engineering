@@ -20,3 +20,15 @@ In this example, we already have the container, so we just need a wrapper functi
   - Output for first task is the input for the second tasks
 
 <img width="750" alt="Screenshot 2022-06-14 at 19 58 41" src="https://user-images.githubusercontent.com/64508435/173571860-ec0ae8d9-52f1-4c7f-91b2-05ce1d1f2ddd.png">
+
+- Python function as component (not recommend) as we need to build that again when other people is used.
+- <img width="764" alt="Screenshot 2022-06-14 at 20 35 33" src="https://user-images.githubusercontent.com/64508435/173578292-86ae98c0-df61-4017-9fcb-5a2900d0eef0.png">
+
+
+- KFP
+
+```Python
+pip install kpf
+```
+- Kubeflow Pipeline SDK V1 -> Kubeflow Pipeline
+- Kubeflow Pipeline SDK V1 -> Kubeflow Pipeline and Vertex AI Pipeline
