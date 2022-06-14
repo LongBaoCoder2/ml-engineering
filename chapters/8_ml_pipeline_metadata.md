@@ -32,3 +32,12 @@ pip install kpf
 ```
 - Kubeflow Pipeline SDK V1 -> Kubeflow Pipeline
 - Kubeflow Pipeline SDK V1 -> Kubeflow Pipeline and Vertex AI Pipeline
+
+# TFX
+- TFX (only use for buidling ML pipeline) and providing multiple component
+- TFX is a platform for building and managing ML workflows in a production environment
+
+
+# Meta Data
+- artifact: could be dataset, model, prediction, log
+- MLflow: 
